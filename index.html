@@ -656,11 +656,10 @@
   </div>
 </div>
 
-<!-- Scroll-triggered warning popup (Urdu) -->
+<!-- Recurring warning popup (Urdu, random message every ~12s) -->
 <div class="modal-overlay" id="warnModal">
   <div class="modal-box">
-    <p class="modal-title" dir="rtl" lang="ur">نئی نئی اور چھوٹی ٹیموں سے بچیں</p>
-    <p class="modal-text" dir="rtl" lang="ur">اور اپنے سالوں کی محنت کو ضائع مت کریں۔</p>
+    <p class="modal-title" id="warnText" dir="rtl" lang="ur"></p>
     <div class="modal-actions">
       <button class="modal-btn yes" id="warnOkBtn">OK</button>
     </div>
@@ -742,22 +741,41 @@
     waModal.classList.remove('show');
   });
 
-  // scroll-triggered Urdu warning popup (once per visit, after ~12s of scrolling)
+  // recurring Urdu warning popup — random message every ~10-12s, starts after first scroll
+  const warnMessages = [
+    "نئی نئی اور غیر معیاری ٹیموں سے بچیں اور اپنے سالوں کی محنت ضائع مت کریں۔",
+    "اپنی محنت ضائع نہ کریں: ناتجربہ کار ٹیموں کو سختی سے 'ناں' کہیں!",
+    "ناتجربہ کار شیئرنگ ٹیمیں آپ کی کامیابی کو لمحوں میں تباہ کر سکتی ہیں!"
+  ];
   const warnModal = document.getElementById('warnModal');
-  let scrollTimer = null;
-  let warnShown = false;
-  function armWarnTimer(){
-    if(warnShown || scrollTimer) return;
-    scrollTimer = setTimeout(()=>{
-      if(!warnShown){
-        warnModal.classList.add('show');
-        warnShown = true;
-      }
-    }, 12000);
+  const warnTextEl = document.getElementById('warnText');
+  let warnCycleStarted = false;
+  let warnLastIdx = -1;
+  function nextWarnDelay(){
+    return 10000 + Math.random()*2000; // 10-12s
   }
-  window.addEventListener('scroll', armWarnTimer, {passive:true});
+  function pickWarnMessage(){
+    let idx;
+    do{ idx = Math.floor(Math.random()*warnMessages.length); } while(idx===warnLastIdx && warnMessages.length>1);
+    warnLastIdx = idx;
+    return warnMessages[idx];
+  }
+  function showWarnPopup(){
+    warnTextEl.textContent = pickWarnMessage();
+    warnModal.classList.add('show');
+  }
+  function scheduleNextWarn(){
+    setTimeout(showWarnPopup, nextWarnDelay());
+  }
+  function startWarnCycle(){
+    if(warnCycleStarted) return;
+    warnCycleStarted = true;
+    scheduleNextWarn();
+  }
+  window.addEventListener('scroll', startWarnCycle, {passive:true});
   document.getElementById('warnOkBtn').addEventListener('click', ()=>{
     warnModal.classList.remove('show');
+    scheduleNextWarn();
   });
 </script>
 
