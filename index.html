@@ -171,6 +171,13 @@
     display:block;
     margin-bottom:6px;
     letter-spacing:0.04em;
+    animation:eyebrowPop 3.2s ease-in-out infinite;
+  }
+  @keyframes eyebrowPop{
+    0%, 45%{ opacity:1; transform:scale(1); }
+    60%{ opacity:0.1; transform:scale(0.82); }
+    80%{ opacity:1; transform:scale(1.06); }
+    100%{ opacity:1; transform:scale(1); }
   }
   .section-head h2{
     font-size:1.6rem;
@@ -298,6 +305,47 @@
   .testi-text{ font-size:0.85rem; color:var(--ink-dim); line-height:1.55; margin-bottom:10px; min-height:80px; }
   .testi-name{ font-weight:700; font-size:0.85rem; color:var(--gold-bright); }
 
+  /* ---------- ads / new clients promo ---------- */
+  .promo-card{
+    position:relative;
+    background:linear-gradient(155deg, var(--bg-card), var(--bg-raised));
+    border:1px solid var(--gold);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    margin-top:14px;
+    text-align:center;
+    overflow:visible;
+  }
+  .promo-card .promo-title{
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:1.3rem;
+    color:var(--gold-bright);
+    margin-bottom:10px;
+  }
+  .promo-card .promo-text{
+    font-size:0.92rem;
+    color:var(--ink-dim);
+    max-width:44ch;
+    margin:0 auto 18px;
+  }
+  .promo-badge{
+    display:inline-block;
+    background:#1F3D2A;
+    color:#7CE0A0;
+    border:1px solid rgba(124,224,160,0.5);
+    font-size:0.76rem;
+    font-weight:800;
+    padding:6px 14px;
+    border-radius:999px;
+    animation:promoPop 3.5s ease-in-out infinite;
+  }
+  @keyframes promoPop{
+    0%, 55%{ opacity:0; transform:translateY(6px) scale(0.92); }
+    65%, 90%{ opacity:1; transform:translateY(0) scale(1); }
+    100%{ opacity:0; transform:translateY(6px) scale(0.92); }
+  }
+
   .highlight-card{
     background:linear-gradient(155deg, var(--bg-card), var(--bg-raised));
     border:1px solid var(--gold);
@@ -412,6 +460,14 @@
     text-align:center;
     box-shadow:0 10px 40px rgba(0,0,0,0.5);
   }
+  .modal-appeal{
+    font-size:0.72rem;
+    font-weight:700;
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    margin-bottom:10px;
+  }
   .modal-title{
     font-family:'Fraunces',serif;
     font-size:1.15rem;
@@ -471,11 +527,12 @@
   <button data-target="live-count">Live Count</button>
   <button data-target="monthly">Monthly Pkgs</button>
   <button data-target="sharing">Extra Sharing</button>
+  <button data-target="ads">Get New Clients</button>
   <button data-target="reviews">Reviews</button>
   <button data-target="followers">Followers</button>
-  <button data-target="testimonials">Testimonials</button>
   <button data-target="other">Other Services</button>
   <button data-target="payment">Payment</button>
+  <button data-target="testimonials">Testimonials</button>
 </nav>
 
 <main>
@@ -575,6 +632,21 @@
     </div>
   </section>
 
+  <section id="ads">
+    <div class="section-head reveal">
+      <span class="eyebrow">Marketing Service</span>
+      <h2>Get New Clients on WhatsApp</h2>
+      <p>We run targeted ads that bring real, ready-to-buy clients straight to your WhatsApp.</p>
+    </div>
+    <div class="promo-card reveal">
+      <div class="promo-title">100+ New Clients via WhatsApp</div>
+      <div class="promo-text">Through targeted ads, at a reasonable price — we handle everything so new clients land directly in your WhatsApp inbox, ready to talk business.</div>
+      <span class="promo-badge">✅ 100% Sale Guarantee</span>
+      <br>
+      <span class="promo-badge" style="margin-top:10px; background:#25D366; color:#0B2E1C; border-color:rgba(37,211,102,0.5); animation-delay:1.2s;">📩 DM for Details</span>
+    </div>
+  </section>
+
   <section id="reviews">
     <div class="section-head reveal">
       <span class="eyebrow">Reviews</span>
@@ -600,58 +672,6 @@
       <div class="card"><div class="row"><span class="name">1500 followers</span><span class="price">Rs 2,100</span></div></div>
       <div class="card"><div class="row"><span class="name">2000 followers</span><span class="price">Rs 2,750</span></div></div>
       <div class="card"><div class="row"><span class="name">5000 followers</span><span class="price">Rs 6,900</span></div></div>
-    </div>
-  </section>
-
-  <section id="testimonials">
-    <div class="section-head reveal">
-      <span class="eyebrow">Client Feedback</span>
-      <h2>Testimonials</h2>
-      <p>What our clients say after working with us.</p>
-    </div>
-    <div class="testi-wrap reveal">
-      <div class="testi-track">
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live package liya tha aur results sach mein kamal ke hain! 50 real shares se page ki reach ek dam se barh gayi.</div><div class="testi-name">Sara Ali</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں نے اپنے پیج کے لیے ریویوز کا پیکج لیا تھا۔ بالکل اصلی ریویوز ہیں اور میرے کسٹمرز کا مجھ پر بھروسہ کافی بڑھ گیا ہے۔</div><div class="testi-name">Usman Tariq</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Followers wale package se bohat faida hua. Sab followers organic hain aur ab engagement bhi kafi achi ho gayi hai.</div><div class="testi-name">Fatima Noor</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">حورب گروپ کا واٹس ایپ سپورٹ بہت زبردست ہے۔ میرا فیس بک کا مسئلہ انہوں نے فوراً حل کر دیا۔ بہترین سروس!</div><div class="testi-name">Ali Raza</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Monthly page live package is totally worth the money. 1250 Rs mein daily live with pin, mera business dubara se chal para hai.</div><div class="testi-name">Zara Khan</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ان کی سروس فیس بک کی پالیسیز کے بالکل مطابق ہے۔ مجھے اپنے پیج کے حوالے سے اب کوئی ٹینشن نہیں ہوتی۔</div><div class="testi-name">Bilal Ahmed</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">15 days wala Extra Sharing package try kiya tha. 70+ shares daily mile aur live session par achi khasi audience aana shuru ho gayi.</div><div class="testi-name">Sana Jamil</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live Count Package best laga mujhe! 60 din mein 15 lives wala, tension free kaam hai. Totally satisfied!</div><div class="testi-name">Danish Naseer</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">فکسڈ ویوز والے ایڈ آن نے میرے لائیو سیشن کی رونق بڑھا دی۔ اب لوگ خود بخود لائیو میں رکتے ہیں۔</div><div class="testi-name">Hira Mehmood</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Prices bohat reasonable hain baqi sab se. 100 shares sirf 85 Rs mein, maine try kiya acha response mila hey.</div><div class="testi-name">Kamran Shah</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Alhumdulliah last 3 saal say Hoorab Group say he kam krwa rhi hoon or sale bhe bht achi ho rhi hey!</div><div class="testi-name">Nida Qasim</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Reels par views bilkul nahi aa rahe the, inka Reel Pin package lene ke baad se response 100% better ho gaya hai.</div><div class="testi-name">Zainab Sheikh</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ریویوز پیکج خریدا تھا اپنے کپڑوں کے پیج کے لیے، اتنے نیچرل کمنٹس تھے کہ کسی کو لگا ہی نہیں کہ پیڈ سروس ہے۔</div><div class="testi-name">Omer Farooq</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Extra likes and comments really make a difference. Meri daily sales inki vajah se double ho chuki hain.</div><div class="testi-name">Tuba Junaid</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں پچھلے دو مہینے سے حورب گروپ سے سروسز لے رہا ہوں۔ بہت ایماندار لوگ ہیں، کبھی کام میں شکایت نہیں ملی۔</div><div class="testi-name">Hammad Ali</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Instagram aur Facebook dono ke followers liye the. Koi drop nahi hua abhi tak, 100% original accounts lagte hain.</div><div class="testi-name">Saad Imran</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Page live with pin ka experience bohat acha raha. Inky pin krny ki wjha say boht organic traffic and reach milte hai.</div><div class="testi-name">Maryam Yaseen</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">واٹس ایپ پر رابطہ کیا اور انہوں نے بہت اچھے سے گائیڈ کیا۔ سروس بھی اتنی ہی شاندار نکلی۔ ہائیلی ریکمنڈڈ!</div><div class="testi-name">Faisal Qureshi</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live sessions ke sharing sy waky he buyers mily hain. Mujhe inki Moiz Extra Sharing Pkg bohat pasand aayi.</div><div class="testi-name">Ayesha Malik</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Kam budget mein is se behtar service aur nahi mil sakti. Mere naye page ko inhone successful bana diya!</div><div class="testi-name">Waleed Hassan</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live package liya tha aur results sach mein kamal ke hain! 50 real shares se page ki reach ek dam se barh gayi.</div><div class="testi-name">Sara Ali</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں نے اپنے پیج کے لیے ریویوز کا پیکج لیا تھا۔ بالکل اصلی ریویوز ہیں اور میرے کسٹمرز کا مجھ پر بھروسہ کافی بڑھ گیا ہے۔</div><div class="testi-name">Usman Tariq</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Followers wale package se bohat faida hua. Sab followers organic hain aur ab engagement bhi kafi achi ho gayi hai.</div><div class="testi-name">Fatima Noor</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">حورب گروپ کا واٹس ایپ سپورٹ بہت زبردست ہے۔ میرا فیس بک کا مسئلہ انہوں نے فوراً حل کر دیا۔ بہترین سروس!</div><div class="testi-name">Ali Raza</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Monthly page live package is totally worth the money. 1250 Rs mein daily live with pin, mera business dubara se chal para hai.</div><div class="testi-name">Zara Khan</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ان کی سروس فیس بک کی پالیسیز کے بالکل مطابق ہے۔ مجھے اپنے پیج کے حوالے سے اب کوئی ٹینشن نہیں ہوتی۔</div><div class="testi-name">Bilal Ahmed</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">15 days wala Extra Sharing package try kiya tha. 70+ shares daily mile aur live session par achi khasi audience aana shuru ho gayi.</div><div class="testi-name">Sana Jamil</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live Count Package best laga mujhe! 60 din mein 15 lives wala, tension free kaam hai. Totally satisfied!</div><div class="testi-name">Danish Naseer</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">فکسڈ ویوز والے ایڈ آن نے میرے لائیو سیشن کی رونق بڑھا دی۔ اب لوگ خود بخود لائیو میں رکتے ہیں۔</div><div class="testi-name">Hira Mehmood</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Prices bohat reasonable hain baqi sab se. 100 shares sirf 85 Rs mein, maine try kiya acha response mila hey.</div><div class="testi-name">Kamran Shah</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Alhumdulliah last 3 saal say Hoorab Group say he kam krwa rhi hoon or sale bhe bht achi ho rhi hey!</div><div class="testi-name">Nida Qasim</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Reels par views bilkul nahi aa rahe the, inka Reel Pin package lene ke baad se response 100% better ho gaya hai.</div><div class="testi-name">Zainab Sheikh</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ریویوز پیکج خریدا تھا اپنے کپڑوں کے پیج کے لیے، اتنے نیچرل کمنٹس تھے کہ کسی کو لگا ہی نہیں کہ پیڈ سروس ہے۔</div><div class="testi-name">Omer Farooq</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Extra likes and comments really make a difference. Meri daily sales inki vajah se double ho chuki hain.</div><div class="testi-name">Tuba Junaid</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں پچھلے دو مہینے سے حورب گروپ سے سروسز لے رہا ہوں۔ بہت ایماندار لوگ ہیں، کبھی کام میں شکایت نہیں ملی۔</div><div class="testi-name">Hammad Ali</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Instagram aur Facebook dono ke followers liye the. Koi drop nahi hua abhi tak, 100% original accounts lagte hain.</div><div class="testi-name">Saad Imran</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Page live with pin ka experience bohat acha raha. Inky pin krny ki wjha say boht organic traffic and reach milte hai.</div><div class="testi-name">Maryam Yaseen</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">واٹس ایپ پر رابطہ کیا اور انہوں نے بہت اچھے سے گائیڈ کیا۔ سروس بھی اتنی ہی شاندار نکلی۔ ہائیلی ریکمنڈڈ!</div><div class="testi-name">Faisal Qureshi</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live sessions ke sharing sy waky he buyers mily hain. Mujhe inki Moiz Extra Sharing Pkg bohat pasand aayi.</div><div class="testi-name">Ayesha Malik</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Kam budget mein is se behtar service aur nahi mil sakti. Mere naye page ko inhone successful bana diya!</div><div class="testi-name">Waleed Hassan</div></div>
-      </div>
     </div>
   </section>
 
@@ -713,6 +733,58 @@
     </div>
   </section>
 
+  <section id="testimonials">
+    <div class="section-head reveal">
+      <span class="eyebrow">Client Feedback</span>
+      <h2>Testimonials</h2>
+      <p>What our clients say after working with us.</p>
+    </div>
+    <div class="testi-wrap reveal">
+      <div class="testi-track">
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live package liya tha aur results sach mein kamal ke hain! 50 real shares se page ki reach ek dam se barh gayi.</div><div class="testi-name">Sara Ali</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں نے اپنے پیج کے لیے ریویوز کا پیکج لیا تھا۔ بالکل اصلی ریویوز ہیں اور میرے کسٹمرز کا مجھ پر بھروسہ کافی بڑھ گیا ہے۔</div><div class="testi-name">Usman Tariq</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Followers wale package se bohat faida hua. Sab followers organic hain aur ab engagement bhi kafi achi ho gayi hai.</div><div class="testi-name">Fatima Noor</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">حورب گروپ کا واٹس ایپ سپورٹ بہت زبردست ہے۔ میرا فیس بک کا مسئلہ انہوں نے فوراً حل کر دیا۔ بہترین سروس!</div><div class="testi-name">Ali Raza</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Monthly page live package is totally worth the money. 1250 Rs mein daily live with pin, mera business dubara se chal para hai.</div><div class="testi-name">Zara Khan</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ان کی سروس فیس بک کی پالیسیز کے بالکل مطابق ہے۔ مجھے اپنے پیج کے حوالے سے اب کوئی ٹینشن نہیں ہوتی۔</div><div class="testi-name">Bilal Ahmed</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">15 days wala Extra Sharing package try kiya tha. 70+ shares daily mile aur live session par achi khasi audience aana shuru ho gayi.</div><div class="testi-name">Sana Jamil</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live Count Package best laga mujhe! 60 din mein 15 lives wala, tension free kaam hai. Totally satisfied!</div><div class="testi-name">Danish Naseer</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">فکسڈ ویوز والے ایڈ آن نے میرے لائیو سیشن کی رونق بڑھا دی۔ اب لوگ خود بخود لائیو میں رکتے ہیں۔</div><div class="testi-name">Hira Mehmood</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Prices bohat reasonable hain baqi sab se. 100 shares sirf 85 Rs mein, maine try kiya acha response mila hey.</div><div class="testi-name">Kamran Shah</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Alhumdulliah last 3 saal say Hoorab Group say he kam krwa rhi hoon or sale bhe bht achi ho rhi hey!</div><div class="testi-name">Nida Qasim</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Reels par views bilkul nahi aa rahe the, inka Reel Pin package lene ke baad se response 100% better ho gaya hai.</div><div class="testi-name">Zainab Sheikh</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ریویوز پیکج خریدا تھا اپنے کپڑوں کے پیج کے لیے، اتنے نیچرل کمنٹس تھے کہ کسی کو لگا ہی نہیں کہ پیڈ سروس ہے۔</div><div class="testi-name">Omer Farooq</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Extra likes and comments really make a difference. Meri daily sales inki vajah se double ho chuki hain.</div><div class="testi-name">Tuba Junaid</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں پچھلے دو مہینے سے حورب گروپ سے سروسز لے رہا ہوں۔ بہت ایماندار لوگ ہیں، کبھی کام میں شکایت نہیں ملی۔</div><div class="testi-name">Hammad Ali</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Instagram aur Facebook dono ke followers liye the. Koi drop nahi hua abhi tak, 100% original accounts lagte hain.</div><div class="testi-name">Saad Imran</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Page live with pin ka experience bohat acha raha. Inky pin krny ki wjha say boht organic traffic and reach milte hai.</div><div class="testi-name">Maryam Yaseen</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">واٹس ایپ پر رابطہ کیا اور انہوں نے بہت اچھے سے گائیڈ کیا۔ سروس بھی اتنی ہی شاندار نکلی۔ ہائیلی ریکمنڈڈ!</div><div class="testi-name">Faisal Qureshi</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live sessions ke sharing sy waky he buyers mily hain. Mujhe inki Moiz Extra Sharing Pkg bohat pasand aayi.</div><div class="testi-name">Ayesha Malik</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Kam budget mein is se behtar service aur nahi mil sakti. Mere naye page ko inhone successful bana diya!</div><div class="testi-name">Waleed Hassan</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live package liya tha aur results sach mein kamal ke hain! 50 real shares se page ki reach ek dam se barh gayi.</div><div class="testi-name">Sara Ali</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں نے اپنے پیج کے لیے ریویوز کا پیکج لیا تھا۔ بالکل اصلی ریویوز ہیں اور میرے کسٹمرز کا مجھ پر بھروسہ کافی بڑھ گیا ہے۔</div><div class="testi-name">Usman Tariq</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Followers wale package se bohat faida hua. Sab followers organic hain aur ab engagement bhi kafi achi ho gayi hai.</div><div class="testi-name">Fatima Noor</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">حورب گروپ کا واٹس ایپ سپورٹ بہت زبردست ہے۔ میرا فیس بک کا مسئلہ انہوں نے فوراً حل کر دیا۔ بہترین سروس!</div><div class="testi-name">Ali Raza</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Monthly page live package is totally worth the money. 1250 Rs mein daily live with pin, mera business dubara se chal para hai.</div><div class="testi-name">Zara Khan</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ان کی سروس فیس بک کی پالیسیز کے بالکل مطابق ہے۔ مجھے اپنے پیج کے حوالے سے اب کوئی ٹینشن نہیں ہوتی۔</div><div class="testi-name">Bilal Ahmed</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">15 days wala Extra Sharing package try kiya tha. 70+ shares daily mile aur live session par achi khasi audience aana shuru ho gayi.</div><div class="testi-name">Sana Jamil</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live Count Package best laga mujhe! 60 din mein 15 lives wala, tension free kaam hai. Totally satisfied!</div><div class="testi-name">Danish Naseer</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">فکسڈ ویوز والے ایڈ آن نے میرے لائیو سیشن کی رونق بڑھا دی۔ اب لوگ خود بخود لائیو میں رکتے ہیں۔</div><div class="testi-name">Hira Mehmood</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Prices bohat reasonable hain baqi sab se. 100 shares sirf 85 Rs mein, maine try kiya acha response mila hey.</div><div class="testi-name">Kamran Shah</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Alhumdulliah last 3 saal say Hoorab Group say he kam krwa rhi hoon or sale bhe bht achi ho rhi hey!</div><div class="testi-name">Nida Qasim</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Reels par views bilkul nahi aa rahe the, inka Reel Pin package lene ke baad se response 100% better ho gaya hai.</div><div class="testi-name">Zainab Sheikh</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ریویوز پیکج خریدا تھا اپنے کپڑوں کے پیج کے لیے، اتنے نیچرل کمنٹس تھے کہ کسی کو لگا ہی نہیں کہ پیڈ سروس ہے۔</div><div class="testi-name">Omer Farooq</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Extra likes and comments really make a difference. Meri daily sales inki vajah se double ho chuki hain.</div><div class="testi-name">Tuba Junaid</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں پچھلے دو مہینے سے حورب گروپ سے سروسز لے رہا ہوں۔ بہت ایماندار لوگ ہیں، کبھی کام میں شکایت نہیں ملی۔</div><div class="testi-name">Hammad Ali</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Instagram aur Facebook dono ke followers liye the. Koi drop nahi hua abhi tak, 100% original accounts lagte hain.</div><div class="testi-name">Saad Imran</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Page live with pin ka experience bohat acha raha. Inky pin krny ki wjha say boht organic traffic and reach milte hai.</div><div class="testi-name">Maryam Yaseen</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">واٹس ایپ پر رابطہ کیا اور انہوں نے بہت اچھے سے گائیڈ کیا۔ سروس بھی اتنی ہی شاندار نکلی۔ ہائیلی ریکمنڈڈ!</div><div class="testi-name">Faisal Qureshi</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live sessions ke sharing sy waky he buyers mily hain. Mujhe inki Moiz Extra Sharing Pkg bohat pasand aayi.</div><div class="testi-name">Ayesha Malik</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Kam budget mein is se behtar service aur nahi mil sakti. Mere naye page ko inhone successful bana diya!</div><div class="testi-name">Waleed Hassan</div></div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -731,6 +803,7 @@
 <!-- WhatsApp confirm modal -->
 <div class="modal-overlay" id="waModal">
   <div class="modal-box">
+    <p class="modal-appeal">A Request from the Hoorab Team</p>
     <p class="modal-title">Connect to Hoorab Group?</p>
     <p class="modal-text">You'll be taken straight to our WhatsApp number to chat.</p>
     <div class="modal-actions">
@@ -743,6 +816,7 @@
 <!-- Recurring warning popup (Urdu, random message every ~12s) -->
 <div class="modal-overlay" id="warnModal">
   <div class="modal-box">
+    <p class="modal-appeal" dir="rtl" lang="ur">حورب ٹیم کی آپ سے گزارش ہے:</p>
     <p class="modal-title" id="warnText" dir="rtl" lang="ur"></p>
     <div class="modal-actions">
       <button class="modal-btn yes" id="warnOkBtn">OK</button>
@@ -786,7 +860,7 @@
   }, 4000);
 
   // auto-scroll through sections when idle; stops on first manual interaction
-  const sectionOrder = ['reel','live-count','monthly','sharing','reviews','followers','testimonials','other','payment'];
+  const sectionOrder = ['reel','live-count','monthly','sharing','ads','reviews','followers','other','payment','testimonials'];
   let autoIdx = -1;
   let autoplay = true;
   const autoTimer = setInterval(()=>{
@@ -813,7 +887,7 @@
   });
 
   // WhatsApp confirm modal
-  const WA_LINK = "https://wa.me/923443965720";
+  const WA_LINK = "https://wa.me/923443965720?text=" + encodeURIComponent("Hi Hoorab Group! I visited your website and I'm interested in your services.");
   const waModal = document.getElementById('waModal');
   document.querySelectorAll('#waFloatBtn, #waLinkBtn').forEach(btn=>{
     btn.addEventListener('click', (e)=>{
@@ -831,9 +905,9 @@
 
   // recurring Urdu warning popup — random message every ~10-12s, starts after first scroll
   const warnMessages = [
-    "نئی نئی اور غیر معیاری ٹیموں سے بچیں اور اپنے سالوں کی محنت ضائع مت کریں۔",
-    "اپنی محنت ضائع نہ کریں: ناتجربہ کار ٹیموں کو سختی سے 'ناں' کہیں!",
-    "ناتجربہ کار شیئرنگ ٹیمیں آپ کی کامیابی کو لمحوں میں تباہ کر سکتی ہیں!"
+    "نئی اور غیر معیاری ٹیموں سے بچیں، اور اپنے سالوں کی محنت ضائع نہ کریں۔",
+    "اپنی محنت ضائع نہ کریں، ناتجربہ کار ٹیموں کو سختی سے 'ناں' کہیں!",
+    "ناتجربہ کار شیئرنگ ٹیموں سے ہوشیار رہیں، یہ آپ کی کامیابی کو لمحوں میں تباہ کر سکتی ہیں!"
   ];
   const warnModal = document.getElementById('warnModal');
   const warnTextEl = document.getElementById('warnText');
@@ -865,6 +939,7 @@
     warnModal.classList.remove('show');
     scheduleNextWarn();
   });
+
 </script>
 
 </body>
