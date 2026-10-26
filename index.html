@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+  // Always open the secure (https) version of the site
+  if (location.protocol === 'http:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+    location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hoorab Group — Growth Services</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
