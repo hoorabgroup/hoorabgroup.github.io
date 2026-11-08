@@ -8,1021 +8,758 @@
     location.replace('https://' + location.host + location.pathname + location.search + location.hash);
   }
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hoorab Group — Growth Services</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="preload" href="fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="theme-color" content="#13100C">
+<title>Hoorab Group | We grow online sellers' business, organically</title>
+<meta name="description" content="Hoorab Group's team of 115+ girls shares your posts, reels and lives in big Facebook groups and brings real followers, reviews and buyers. Organic work for online sellers in Pakistan.">
 <style>
+  @font-face{
+    font-family:'Figtree';font-style:normal;font-weight:300 900;font-display:swap;
+    src:url(fonts/figtree.woff2) format('woff2-variations'), url(fonts/figtree.woff2) format('woff2');
+  }
   :root{
-    --ink:#F4EEE2;
-    --ink-dim:#C9BFA8;
-    --bg:#100D0A;
-    --bg-raised:#1B160F;
-    --bg-card:#1F1911;
-    --gold:#D9A94E;
-    --gold-bright:#F0C878;
-    --line:rgba(217,169,78,0.22);
-    --red:#FF6F5E;
-    --red-deep:#8C3B3B;
-    --radius:14px;
+    --bg:#13100C; --bg-2:#1B1712; --bg-3:#241E16; --line:#30281E; --line-2:#463A2B;
+    --text:#F7F2E9; --muted:#B8AD98; --faint:#8A806D;
+    --gold:#E2B25A; --gold-2:#F4D493; --gold-deep:#B8862F; --gold-ink:#291C08; --gold-tint:rgba(226,178,90,.12);
+    --wa:#25D366; --wa-ink:#05311A; --wa-soft:#8BE9B1;
+    --ig:#E1306C; --fb:#4C8BF5;
+    --font:'Figtree', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --hdr:60px;
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Manrope',sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  h1,h2,h3{ font-family:'Fraunces',serif; letter-spacing:0.01em; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 10px);-webkit-text-size-adjust:100%;}
+  body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
+  a{color:inherit;text-decoration:none;}
+  video{max-width:100%;display:block;}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px;}
+  svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+  [data-i]{display:inline-flex;}
+  .num{font-variant-numeric:tabular-nums;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  html.lock, html.lock body{overflow:hidden;}
 
-  body::before{
-    content:"";
-    position:fixed; inset:0;
-    background:
-      radial-gradient(circle at 15% 8%, rgba(217,169,78,0.09), transparent 40%),
-      radial-gradient(circle at 85% 92%, rgba(140,59,59,0.10), transparent 45%);
-    pointer-events:none;
-    z-index:0;
-  }
+  /* ---------- buttons ---------- */
+  .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:9px;height:52px;padding:0 24px;border-radius:15px;font-size:16px;font-weight:700;transition:transform .15s ease,box-shadow .25s;}
+  .btn:active{transform:scale(.97);}
+  .btn svg.i{width:19px;height:19px;}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold) 55%,var(--gold-deep));color:var(--gold-ink);box-shadow:0 12px 30px rgba(226,178,90,.25);}
+  .btn-gold::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);animation:shine 4.5s ease-in-out infinite;}
+  @keyframes shine{0%,62%{left:-70%;}100%{left:140%;}}
+  .btn-wa{background:var(--wa);color:var(--wa-ink);box-shadow:0 12px 30px rgba(37,211,102,.22);}
+  .btn-line{border:1px solid var(--line-2);background:rgba(255,255,255,.02);}
+  .btn-line svg.i{color:var(--wa);}
+  .btn-full{width:100%;}
 
-  /* ---------- hero ---------- */
-  .hero{
-    position:relative;
-    padding:60px 22px 30px;
-    text-align:center;
-    border-bottom:1px solid var(--line);
-    overflow:hidden;
-  }
-  .crown{
-    width:46px; height:46px; margin:0 auto 18px;
-    opacity:0; animation:dropIn 0.7s 0.1s cubic-bezier(.2,.8,.2,1) forwards;
-  }
-  .hero h1{
-    font-size:clamp(2.4rem, 8vw, 3.6rem);
-    font-weight:900;
-    background:linear-gradient(100deg, var(--gold) 20%, var(--gold-bright) 40%, var(--gold) 60%);
-    background-size:220% auto;
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-    opacity:0;
-    animation:dropIn 0.8s 0.25s cubic-bezier(.2,.8,.2,1) forwards, shimmer 5s 1.2s ease-in-out infinite;
-  }
-  .hero .sub{
-    margin-top:14px;
-    color:var(--ink-dim);
-    font-size:1.02rem;
-    letter-spacing:0.02em;
-    opacity:0;
-    animation:dropIn 0.8s 0.45s cubic-bezier(.2,.8,.2,1) forwards;
-  }
-  @keyframes dropIn{ from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);} }
-  @keyframes shimmer{ 0%,100%{background-position:0% center;} 50%{background-position:100% center;} }
+  /* ---------- announcement + header ---------- */
+  .announce{background:#2A1713;border-bottom:1px solid #45261F;color:#F5D5CC;height:30px;overflow:hidden;white-space:nowrap;display:flex;align-items:center;font-size:12.5px;}
+  .announce .track{display:inline-flex;padding-left:100%;animation:marquee 28s linear infinite;}
+  .announce span{padding:0 32px;}
+  @keyframes marquee{to{transform:translateX(-100%);}}
+  .hdr{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid transparent;transition:border-color .3s;}
+  .hdr.scrolled{border-bottom-color:var(--line);}
+  .hdr .in{height:var(--hdr);display:flex;align-items:center;gap:12px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-.01em;margin-right:auto;}
+  .crown{width:28px;height:28px;color:var(--gold);}
+  .hdr-link{display:none;padding:8px 12px;border-radius:10px;font-size:14.5px;font-weight:600;color:var(--muted);}
+  .hdr-link:hover{color:var(--text);background:rgba(255,255,255,.04);}
+  .hdr-wa{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-radius:11px;border:1px solid rgba(37,211,102,.45);color:var(--wa-soft);font-size:14px;font-weight:700;}
+  .hdr-wa svg.i{width:17px;height:17px;}
 
-  /* ---------- headline ticker ---------- */
-  .ticker-wrap{
-    margin:20px auto 0;
-    max-width:520px;
-    min-height:46px;
-    display:flex; align-items:center; justify-content:center;
-    opacity:0;
-    animation:dropIn 0.8s 0.6s cubic-bezier(.2,.8,.2,1) forwards;
-  }
-  #ticker{
-    font-size:0.92rem;
-    font-weight:600;
-    color:var(--gold-bright);
-    text-align:center;
-    transition:opacity .5s ease, transform .5s ease;
-    padding:0 12px;
-  }
-  #ticker.fade{ opacity:0; transform:translateY(6px); }
+  /* ---------- intro ---------- */
+  .intro{position:relative;overflow:hidden;padding:64px 0 10px;}
+  .intro-bg{position:absolute;inset:0;pointer-events:none;}
+  .glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 14s ease-in-out infinite;}
+  .glow.g1{width:420px;height:420px;left:-150px;top:-130px;background:radial-gradient(circle,#6B4A1E,transparent 70%);}
+  .glow.g2{width:380px;height:380px;right:-170px;top:140px;background:radial-gradient(circle,#4A2531,transparent 70%);animation-delay:-5s;}
+  @keyframes drift{50%{transform:translate(30px,24px) scale(1.08);}}
+  .grid-lines{position:absolute;inset:0;opacity:.35;background-image:linear-gradient(rgba(226,178,90,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(226,178,90,.06) 1px,transparent 1px);background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);}
+  .bubble{position:absolute;display:flex;align-items:center;gap:7px;padding:8px 12px 8px 9px;border-radius:999px;background:rgba(30,25,19,.9);border:1px solid var(--line-2);
+    font-size:12.5px;font-weight:700;color:#E9DFCC;box-shadow:0 12px 30px rgba(0,0,0,.35);animation:float 6s ease-in-out infinite;white-space:nowrap;}
+  .bubble .dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .bubble .dot svg.i{width:15px;height:15px;}
+  .bubble.b1{left:3%;top:14px;} .bubble.b1 .dot{background:rgba(240,82,75,.18);color:#FF7A73;}
+  .bubble.b2{right:3%;top:44px;animation-delay:-2s;} .bubble.b2 .dot{background:rgba(110,168,255,.18);color:#7FB0FF;}
+  .bubble.b3{left:8%;bottom:16%;animation-delay:-3.5s;display:none;} .bubble.b3 .dot{background:var(--gold-tint);color:var(--gold);}
+  .bubble.b4{right:7%;bottom:24%;animation-delay:-1.2s;display:none;} .bubble.b4 .dot{background:rgba(37,211,102,.16);color:var(--wa-soft);}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
 
-  .hero .rule{
-    width:64px; height:2px; margin:24px auto 0;
-    background:linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity:0;
-    animation:dropIn 0.8s 0.75s cubic-bezier(.2,.8,.2,1) forwards;
-  }
-
-  /* ---------- alert marquee ---------- */
-  .alert-marquee{
-    position:sticky; top:0; z-index:12;
-    overflow:hidden;
-    white-space:nowrap;
-    background:linear-gradient(90deg, var(--red-deep), #6E2A2A);
-    border-bottom:1px solid rgba(255,111,94,0.35);
-    height:32px;
-    display:flex; align-items:center;
-  }
-  .alert-marquee .track{
-    display:inline-flex;
-    align-items:center;
-    padding-left:100%;
-    animation:marquee 26s linear infinite;
-    color:#FFE3DC;
-    font-size:0.8rem;
-    font-weight:600;
-  }
-  .alert-marquee .track span{ padding:0 28px; }
-  @keyframes marquee{
-    from{ transform:translateX(0); }
-    to{ transform:translateX(-100%); }
-  }
-
-  /* ---------- nav ---------- */
-  nav{
-    position:sticky; top:32px; z-index:10;
-    display:flex; gap:8px; overflow-x:auto;
-    padding:12px 16px;
-    background:rgba(16,13,10,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-    scrollbar-width:none;
-  }
-  nav::-webkit-scrollbar{display:none;}
-  nav a, nav button{
-    flex:0 0 auto;
-    color:var(--ink-dim);
-    text-decoration:none;
-    font-size:0.82rem;
-    font-weight:600;
-    padding:8px 14px;
-    border:1px solid var(--line);
-    border-radius:999px;
-    white-space:nowrap;
-    background:transparent;
-    font-family:inherit;
-    cursor:pointer;
-    transition:color .2s, border-color .2s, background .2s;
-  }
-  nav a:active, nav a:hover, nav button:active, nav button:hover{
-    color:var(--bg);
-    background:var(--gold);
-    border-color:var(--gold);
-  }
+  .intro-in{position:relative;text-align:center;max-width:780px;margin:0 auto;padding-top:28px;}
+  .pill{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--gold-2);background:var(--gold-tint);border:1px solid rgba(226,178,90,.3);border-radius:999px;padding:6px 14px 6px 12px;}
+  .pill .live{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(226,178,90,.6);}70%{box-shadow:0 0 0 9px rgba(226,178,90,0);}100%{box-shadow:0 0 0 0 rgba(226,178,90,0);}}
+  .intro h1{font-size:clamp(34px,8.8vw,60px);line-height:1.07;font-weight:800;letter-spacing:-.032em;margin:20px auto 0;max-width:14ch;}
+  .intro h1 .w{display:inline-block;opacity:0;transform:translateY(18px);animation:wordIn .6s cubic-bezier(.2,.8,.2,1) forwards;}
+  @keyframes wordIn{to{opacity:1;transform:none;}}
+  .intro h1 .gold{background:linear-gradient(100deg,var(--gold-2),var(--gold) 45%,#F7E3B5 70%,var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:wordIn .6s cubic-bezier(.2,.8,.2,1) forwards, sheen 5s linear 1.2s infinite;}
+  @keyframes sheen{to{background-position:-200% center;}}
+  .intro .lead{color:var(--muted);font-size:16.5px;margin:18px auto 0;max-width:50ch;}
+  .points{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:600px;margin:24px auto 0;text-align:center;}
+  .pt{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px 12px;border-radius:16px;background:rgba(27,23,18,.85);border:1px solid var(--line);}
+  .pt .ck{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:var(--gold-tint);color:var(--gold);flex:none;}
+  .pt .ck svg.i{width:17px;height:17px;}
+  .pt b{display:block;font-size:13px;font-weight:700;line-height:1.25;}
+  .pt span{display:block;font-size:11.5px;color:var(--muted);line-height:1.3;margin-top:3px;}
+  .intro .cta{display:flex;flex-direction:column;gap:12px;max-width:360px;margin:28px auto 0;}
+  .scroll-hint{display:flex;justify-content:center;margin-top:34px;color:var(--faint);}
+  .scroll-hint svg.i{animation:hint 1.8s ease-in-out infinite;}
+  @keyframes hint{50%{transform:translateY(6px);}}
 
   /* ---------- sections ---------- */
-  main{ max-width:760px; margin:0 auto; padding:8px 18px 40px; position:relative; z-index:1;}
-  section{ padding:46px 0 8px; border-bottom:1px solid var(--line); scroll-margin-top:96px; }
-  section:last-of-type{ border-bottom:none; }
-  .section-head{ margin-bottom:22px; }
-  .section-head .eyebrow{
-    color:var(--red);
-    font-size:0.8rem;
-    font-weight:800;
-    display:block;
-    margin-bottom:6px;
-    letter-spacing:0.04em;
-    animation:eyebrowPop 3.2s ease-in-out infinite;
-  }
-  @keyframes eyebrowPop{
-    0%, 45%{ opacity:1; transform:scale(1); }
-    60%{ opacity:0.1; transform:scale(0.82); }
-    80%{ opacity:1; transform:scale(1.06); }
-    100%{ opacity:1; transform:scale(1); }
-  }
-  .section-head h2{
-    font-size:1.6rem;
-    font-weight:700;
-    color:var(--gold-bright);
-    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-  }
-  .hot-badge{
-    font-family:'Manrope',sans-serif;
-    font-size:0.68rem;
-    font-weight:800;
-    letter-spacing:0.04em;
-    color:#1A0E0A;
-    background:linear-gradient(100deg, var(--red), #FF9166);
-    padding:4px 10px;
-    border-radius:999px;
-    box-shadow:0 0 12px rgba(255,111,94,0.5);
-    animation:pulseHot 1.8s ease-in-out infinite;
-  }
-  @keyframes pulseHot{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.07); } }
-  .section-head p{ color:var(--ink-dim); font-size:0.92rem; margin-top:6px; max-width:52ch; }
+  .sec{padding-top:64px;}
+  .sec-head{text-align:center;max-width:600px;margin:0 auto 26px;}
+  .sec-head h2{font-size:clamp(27px,6.6vw,38px);line-height:1.15;font-weight:800;letter-spacing:-.025em;}
+  .sec-head p{color:var(--muted);font-size:15.5px;margin-top:8px;}
+  .rv{opacity:0;transform:translateY(24px) scale(.98);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s);}
+  .rv.in{opacity:1;transform:none;}
 
-  .reveal{
-    opacity:0; transform:translateY(16px);
-    transition:opacity .6s ease, transform .6s ease;
-  }
-  .reveal.in{ opacity:1; transform:translateY(0); }
+  /* ---------- service cards ---------- */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .svc{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;text-align:left;background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:18px 16px 16px;
+    transition:transform .25s ease,border-color .25s,box-shadow .25s;}
+  .svc::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 0% 0%,rgba(226,178,90,.10),transparent 55%);opacity:0;transition:opacity .3s;}
+  .svc:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 18px 40px rgba(0,0,0,.35);}
+  .svc:hover::before{opacity:1;}
+  .svc:active{transform:scale(.97);}
+  .svc h3{position:relative;font-size:16.5px;font-weight:800;letter-spacing:-.01em;margin-top:14px;line-height:1.25;}
+  .svc p{position:relative;font-size:13px;color:var(--muted);line-height:1.45;margin-top:5px;}
+  .plats{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;position:relative;}
+  .plat{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:700;padding:2px 7px 2px 5px;border-radius:999px;border:1px solid var(--line-2);color:#E2D8C6;}
+  .plat i{width:6px;height:6px;border-radius:50%;}
+  .plat.ig i{background:var(--ig);} .plat.fb i{background:var(--fb);}
+  .svc .foot{position:relative;margin-top:auto;padding-top:14px;display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .svc .from{font-size:13px;font-weight:700;color:var(--gold-2);}
+  .svc .from.soft{color:var(--muted);font-weight:600;}
+  .svc .open{width:32px;height:32px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;color:var(--gold);flex:none;transition:background .2s,color .2s,border-color .2s;}
+  .svc .open svg.i{width:16px;height:16px;animation:nudge 1.6s ease-in-out infinite;}
+  .svc:hover .open{background:var(--gold);color:var(--gold-ink);border-color:var(--gold);}
+  .svc.feature{grid-column:1/-1;background:linear-gradient(140deg,#2A2116,var(--bg-2) 65%);border-color:rgba(226,178,90,.45);}
+  .tagp{display:inline-block;font-size:11px;font-weight:800;color:var(--gold-ink);background:var(--gold);border-radius:6px;padding:2px 8px;margin-left:8px;vertical-align:2px;}
 
-  .grid{ display:grid; gap:12px; }
-  .grid.two{ grid-template-columns:1fr 1fr; }
-  @media (max-width:520px){ .grid.two{ grid-template-columns:1fr; } }
+  /* animated icon tiles */
+  .ico{position:relative;width:50px;height:50px;border-radius:15px;background:var(--gold-tint);border:1px solid rgba(226,178,90,.24);color:var(--gold);display:flex;align-items:center;justify-content:center;flex:none;}
+  .ico svg.i{width:24px;height:24px;}
+  .ico.c-red{background:rgba(240,82,75,.12);border-color:rgba(240,82,75,.3);color:#FF7A73;}
+  .ico.c-blue{background:rgba(76,139,245,.12);border-color:rgba(76,139,245,.32);color:#7FB0FF;}
+  .ico.c-pink{background:rgba(225,48,108,.12);border-color:rgba(225,48,108,.32);color:#FF6FA0;}
+  .ico.c-green{background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.3);color:var(--wa-soft);}
+  .ico .ring{position:absolute;inset:-1px;border-radius:inherit;border:2px solid currentColor;opacity:0;animation:ping 2.4s cubic-bezier(0,0,.2,1) infinite;}
+  @keyframes ping{0%{transform:scale(1);opacity:.55;}80%,100%{transform:scale(1.45);opacity:0;}}
+  .a-beat svg.i{animation:beat 1.4s ease-in-out infinite;}
+  @keyframes beat{0%,100%{transform:scale(1);}15%{transform:scale(1.22);}30%{transform:scale(1);}45%{transform:scale(1.14);}}
+  .a-bounce svg.i{animation:bounce 2s ease-in-out infinite;}
+  @keyframes bounce{0%,100%{transform:translateY(0);}40%{transform:translateY(-5px);}60%{transform:translateY(1px);}}
+  .a-twinkle svg.i{animation:twinkle 2.6s ease-in-out infinite;}
+  @keyframes twinkle{0%,100%{transform:rotate(0) scale(1);}50%{transform:rotate(72deg) scale(1.12);}}
+  .a-spin svg.i{animation:spin 6s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .a-wiggle svg.i{animation:wiggle 2.4s ease-in-out infinite;}
+  @keyframes wiggle{0%,60%,100%{transform:rotate(0);}10%{transform:rotate(-12deg);}20%{transform:rotate(10deg);}30%{transform:rotate(-6deg);}40%{transform:rotate(4deg);}}
+  .ico[data-cycle] svg.i{position:absolute;inset:0;margin:auto;opacity:0;transform:translateY(6px) scale(.8);transition:opacity .4s ease,transform .4s ease;}
+  .ico[data-cycle] svg.i.on{opacity:1;transform:none;}
 
-  .card{
-    background:var(--bg-card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:16px 18px;
-    transition:transform .25s ease, border-color .25s ease, background .25s ease;
-  }
-  .card:hover{
-    transform:translateY(-3px);
-    border-color:var(--gold);
-    background:var(--bg-raised);
-  }
-  .card .row{
-    display:flex; justify-content:space-between; align-items:baseline; gap:12px;
-  }
-  .card .name{ font-weight:600; font-size:0.98rem; }
-  .card .price{
-    font-family:'Fraunces',serif;
-    font-weight:700;
-    font-size:1.25rem;
-    color:var(--gold-bright);
-    white-space:nowrap;
-  }
-  .card .meta{ color:var(--ink-dim); font-size:0.82rem; margin-top:4px; }
+  /* reviews */
+  .slider{overflow:hidden;}
+  .slides{display:flex;transition:transform .7s cubic-bezier(.2,.8,.2,1);}
+  .quote{flex:0 0 100%;padding:0 2px;}
+  .quote .in{height:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:20px 18px;}
+  .stars{display:flex;gap:3px;color:var(--gold);}
+  .stars svg.i{width:16px;height:16px;fill:var(--gold);}
+  .quote p{font-size:15px;margin-top:12px;color:#ECE3D3;}
+  .quote p[dir="rtl"]{font-size:16px;line-height:2;}
+  .who{display:flex;align-items:center;gap:10px;margin-top:16px;}
+  .who .av{width:36px;height:36px;border-radius:50%;background:var(--bg-3);border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--gold-2);}
+  .who b{font-size:14px;}
+  .dots{display:flex;justify-content:center;gap:6px;margin-top:16px;}
+  .dots button{width:7px;height:7px;border-radius:99px;background:var(--line-2);transition:width .3s,background .3s;}
+  .dots button.on{width:22px;background:var(--gold);}
 
-  .subhead{
-    font-size:0.78rem; font-weight:800; letter-spacing:0.06em;
-    color:var(--ink-dim); text-transform:uppercase;
-    margin:22px 0 10px;
-  }
-  .subhead:first-child{ margin-top:0; }
+  /* payment */
+  .pay{display:grid;gap:10px;max-width:720px;margin:0 auto;}
+  .pay-row{display:flex;align-items:center;gap:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:14px 16px;}
+  .pay-logo{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex:none;}
+  .pay-logo.ep{background:#14301F;color:#3DDC84;} .pay-logo.jc{background:#3A1717;color:#FF6B5E;} .pay-logo.sp{background:#2C2410;color:#F4D493;}
+  .pay-row .t2{flex:1;min-width:0;}
+  .pay-row b{display:block;font-size:15px;}
+  .pay-row .t2 span{display:block;font-size:13.5px;color:var(--muted);}
+  .copy{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 13px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted);font-size:13px;font-weight:700;flex:none;transition:all .2s;}
+  .copy svg.i{width:15px;height:15px;}
+  .copy.done{border-color:rgba(37,211,102,.5);color:var(--wa-soft);}
+  .callout{display:flex;gap:10px;align-items:flex-start;max-width:720px;margin:12px auto 0;padding:13px 15px;border-radius:14px;background:rgba(240,82,75,.07);border:1px solid rgba(240,82,75,.3);color:#F3C4BE;font-size:13.5px;}
+  .callout svg.i{width:18px;height:18px;color:#F08B84;margin-top:1px;}
 
-  .note{
-    margin-top:14px;
-    font-size:0.84rem;
-    color:#F2CFC9;
-    border-left:3px solid var(--red);
-    padding-left:10px;
-    font-weight:500;
-  }
-  .includes{ list-style:none; margin-top:10px; }
-  .includes li{
-    font-size:0.88rem; color:var(--ink-dim);
-    padding-left:20px; position:relative; margin-bottom:6px;
-  }
-  .includes li::before{
-    content:"✓"; position:absolute; left:0; color:var(--gold);
-    font-weight:700;
-  }
+  footer{margin-top:64px;border-top:1px solid var(--line);padding:32px 0 calc(96px + env(safe-area-inset-bottom));color:var(--muted);font-size:14px;}
+  .f-about{display:flex;gap:14px;align-items:center;}
+  .avatar{width:52px;height:52px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:var(--gold-ink);
+    background:linear-gradient(140deg,#F0CD86,#A87B34);box-shadow:0 0 0 3px var(--bg),0 0 0 4px rgba(226,178,90,.5);}
+  .f-about b{display:block;color:var(--text);font-size:15px;}
+  .copyright{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--faint);}
 
-  .share-table{ width:100%; border-collapse:collapse; margin-top:4px; }
-  .share-table td{ padding:9px 4px; border-bottom:1px solid var(--line); font-size:0.92rem; }
-  .share-table td:last-child{ text-align:right; color:var(--gold-bright); font-weight:700; font-family:'Fraunces',serif; }
+  .toast{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom));transform:translate(-50%,10px);background:var(--text);color:#1B1712;font-size:14px;font-weight:700;padding:10px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:95;}
+  .toast.show{opacity:1;transform:translate(-50%,0);}
 
-  .other-card{
-    background:var(--bg-card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:16px 18px;
-    transition:transform .25s ease, border-color .25s ease;
-  }
-  .other-card:hover{ transform:translateY(-3px); border-color:var(--gold); }
-  .other-card .oname{ font-weight:700; color:var(--gold-bright); font-size:1rem; margin-bottom:6px; }
-  .other-card .odesc{ font-size:0.88rem; color:var(--ink-dim); }
+  /* ================= service panel (opens on tap) ================= */
+  .sheet-bg{position:fixed;inset:0;z-index:90;background:rgba(6,5,3,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;}
+  .sheet-bg.open{opacity:1;visibility:visible;}
+  .sheet{position:fixed;left:0;right:0;bottom:0;z-index:91;max-height:92vh;max-height:92dvh;display:flex;flex-direction:column;background:var(--bg);border-top:1px solid var(--line-2);border-radius:24px 24px 0 0;
+    box-shadow:0 -24px 60px rgba(0,0,0,.55);transform:translateY(104%);visibility:hidden;transition:transform .4s cubic-bezier(.2,.85,.2,1),visibility .4s;}
+  .sheet.open{transform:none;visibility:visible;}
+  .sh-grab{width:42px;height:4px;border-radius:4px;background:var(--line-2);margin:10px auto 0;flex:none;}
+  .sh-top{display:flex;align-items:center;gap:12px;padding:10px 16px 14px;border-bottom:1px solid var(--line);flex:none;}
+  .sh-btn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;color:var(--muted);flex:none;}
+  .sh-btn svg.i{width:19px;height:19px;}
+  .sh-title{flex:1;min-width:0;display:flex;align-items:center;gap:10px;}
+  .sh-title .ico{width:38px;height:38px;border-radius:11px;}
+  .sh-title .ico svg.i{width:19px;height:19px;}
+  .sh-title b{font-size:17px;font-weight:800;letter-spacing:-.01em;line-height:1.2;}
+  .sh-title small{display:block;font-size:12px;color:var(--faint);font-weight:600;}
+  .sh-body{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:18px 16px calc(26px + env(safe-area-inset-bottom));}
+  .sh-intro{font-size:14.5px;color:var(--muted);}
 
-  /* ---------- testimonials ---------- */
-  .testi-wrap{
-    overflow:hidden;
-    margin-top:18px;
-    -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-    mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  }
-  .testi-track{
-    display:flex;
-    gap:14px;
-    width:max-content;
-    animation:testiScroll 95s linear infinite;
-  }
-  .testi-wrap:hover .testi-track{ animation-play-state:paused; }
-  @keyframes testiScroll{
-    from{ transform:translateX(0); }
-    to{ transform:translateX(-50%); }
-  }
-  .testi-card{
-    flex:0 0 auto;
-    width:240px;
-    background:var(--bg-card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:16px;
-  }
-  .testi-stars{ color:var(--gold); font-size:0.85rem; letter-spacing:2px; margin-bottom:8px; }
-  .testi-text{ font-size:0.85rem; color:var(--ink-dim); line-height:1.55; margin-bottom:10px; min-height:80px; }
-  .testi-name{ font-weight:700; font-size:0.85rem; color:var(--gold-bright); }
+  /* staggered entrance inside the panel */
+  .st > *{opacity:0;transform:translateY(16px);animation:stIn .5s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--k,0) * 70ms + 60ms);}
+  @keyframes stIn{to{opacity:1;transform:none;}}
 
-  /* ---------- ads / new clients promo ---------- */
-  .promo-card{
-    position:relative;
-    background:linear-gradient(155deg, var(--bg-card), var(--bg-raised));
-    border:1px solid var(--gold);
-    border-radius:var(--radius);
-    padding:26px 22px;
-    margin-top:14px;
-    text-align:center;
-    overflow:visible;
-  }
-  .promo-card .promo-title{
-    font-family:'Fraunces',serif;
-    font-weight:800;
-    font-size:1.3rem;
-    color:var(--gold-bright);
-    margin-bottom:10px;
-  }
-  .promo-card .promo-text{
-    font-size:0.92rem;
-    color:var(--ink-dim);
-    max-width:44ch;
-    margin:0 auto 18px;
-  }
-  .promo-badge{
-    display:inline-block;
-    background:#1F3D2A;
-    color:#7CE0A0;
-    border:1px solid rgba(124,224,160,0.5);
-    font-size:0.76rem;
-    font-weight:800;
-    padding:6px 14px;
-    border-radius:999px;
-    animation:promoPop 3.5s ease-in-out infinite;
-  }
-  @keyframes promoPop{
-    0%, 55%{ opacity:0; transform:translateY(6px) scale(0.92); }
-    65%, 90%{ opacity:1; transform:translateY(0) scale(1); }
-    100%{ opacity:0; transform:translateY(6px) scale(0.92); }
-  }
+  .choice{position:relative;overflow:hidden;display:block;width:100%;text-align:left;border-radius:20px;padding:20px 18px;margin-top:14px;background:var(--bg-2);border:1px solid var(--line);transition:transform .15s,border-color .2s;}
+  .choice:active{transform:scale(.985);}
+  .choice:hover{border-color:var(--line-2);}
+  .choice.gold{background:linear-gradient(150deg,#2B2216,var(--bg-2) 70%);border-color:rgba(226,178,90,.5);}
+  .choice::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(240,200,120,.07),transparent);animation:sweep 5s ease-in-out infinite;}
+  @keyframes sweep{0%,60%{left:-60%;}100%{left:130%;}}
+  .choice .top{display:flex;align-items:center;gap:12px;}
+  .choice h3{font-size:18.5px;font-weight:800;letter-spacing:-.015em;line-height:1.25;}
+  .choice .sub{font-size:12.5px;font-weight:700;color:var(--gold);}
+  .choice p{font-size:13.5px;color:var(--muted);margin-top:10px;}
+  .choice .row{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);}
+  .choice .from{font-size:14px;font-weight:700;color:var(--gold-2);}
+  .choice .see{display:inline-flex;align-items:center;gap:4px;font-size:13.5px;font-weight:700;color:var(--gold);}
+  .choice .see svg.i{width:16px;height:16px;animation:nudge 1.6s ease-in-out infinite;}
+  @keyframes nudge{50%{transform:translateX(4px);}}
 
-  /* ---------- personalized surprise website ---------- */
-  .demo-video-wrap{
-    max-width:280px;
-    margin:16px auto 0;
-    border-radius:var(--radius);
-    overflow:hidden;
-    border:1px solid var(--gold);
-    box-shadow:0 8px 30px rgba(0,0,0,0.4);
-  }
-  .demo-video-wrap video{
-    display:block;
-    width:100%;
-    height:auto;
-  }
+  .switch{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:14px;background:var(--bg-2);border:1px solid var(--line);margin-top:16px;}
+  .switch button{display:flex;align-items:center;justify-content:center;gap:7px;height:44px;border-radius:10px;font-size:14px;font-weight:700;color:var(--muted);transition:background .25s,color .25s;}
+  .switch button svg.i{width:17px;height:17px;}
+  .switch button.on{background:var(--bg-3);color:var(--gold-2);box-shadow:inset 0 0 0 1px rgba(226,178,90,.45);}
+  .grp-h{font-size:16.5px;font-weight:800;margin-top:24px;}
+  .grp-p{font-size:13px;color:var(--muted);margin-top:2px;}
 
-  .highlight-card{
-    background:linear-gradient(155deg, var(--bg-card), var(--bg-raised));
-    border:1px solid var(--gold);
-    border-radius:var(--radius);
-    padding:20px;
-    margin-top:14px;
-    text-align:center;
-  }
-  .highlight-card .big-price{
-    font-family:'Fraunces',serif; font-weight:900; font-size:2.1rem; color:var(--gold-bright);
-  }
-  .highlight-card .big-price span{ font-size:1rem; color:var(--ink-dim); font-weight:500; }
+  .pk{position:relative;background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:12px;}
+  .pk.best{border-color:rgba(226,178,90,.6);background:linear-gradient(160deg,#2A2116,var(--bg-2) 70%);margin-top:18px;}
+  .ribbon{position:absolute;top:-10px;left:14px;font-size:11px;font-weight:800;color:var(--gold-ink);background:linear-gradient(135deg,var(--gold-2),var(--gold));border-radius:6px;padding:3px 8px;box-shadow:0 6px 16px rgba(226,178,90,.3);}
+  .pk .r1{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+  .pk h4{font-size:16.5px;font-weight:800;line-height:1.3;letter-spacing:-.01em;}
+  .pk .tg{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px;}
+  .t{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px;border:1px solid var(--line-2);color:var(--muted);}
+  .t svg.i{width:11px;height:11px;}
+  .t.pin{border-color:rgba(226,178,90,.5);color:var(--gold-2);}
+  .pk .pr{font-size:22px;font-weight:800;color:var(--gold-2);text-align:right;white-space:nowrap;line-height:1.1;letter-spacing:-.02em;}
+  .pk .pr small{display:block;font-size:11.5px;font-weight:600;color:var(--faint);letter-spacing:0;margin-top:3px;}
+  .pk .pr.soft{font-size:13.5px;color:var(--muted);font-weight:700;letter-spacing:0;padding-top:3px;}
+  .pk .ds{font-size:13.5px;color:var(--muted);margin-top:8px;}
+  .pk ul{list-style:none;display:grid;gap:6px;margin:12px 0 14px;padding-top:12px;border-top:1px solid var(--line);}
+  .pk li{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:#DCD2C0;line-height:1.4;}
+  .pk li svg.i{width:15px;height:15px;color:var(--gold);margin-top:2px;}
+  .order{display:flex;align-items:center;justify-content:center;gap:7px;height:44px;border-radius:12px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.45);color:var(--wa-soft);font-size:14.5px;font-weight:700;transition:background .2s,color .2s;}
+  .order svg.i{width:17px;height:17px;}
+  .order:hover,.order:active{background:var(--wa);color:var(--wa-ink);}
+  .pk.best .order{background:var(--wa);color:var(--wa-ink);border-color:var(--wa);}
+  .pk.small{padding:14px;}
+  .pk.small ul{margin:10px 0 12px;padding-top:10px;}
 
-  /* ---------- payment ---------- */
-  .pay-grid{ display:grid; gap:14px; margin-top:16px; }
-  .pay-card{
-    background:var(--bg-card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:18px;
-  }
-  .pay-card h3{ color:var(--gold-bright); font-size:1.05rem; margin-bottom:10px; }
-  .pay-card .field{ display:flex; justify-content:space-between; font-size:0.9rem; padding:5px 0; border-bottom:1px dashed var(--line); }
-  .pay-card .field:last-child{ border-bottom:none; }
-  .pay-card .field b{ color:var(--ink); font-weight:600; }
-  .pay-warning{
-    margin-top:16px;
-    background:rgba(140,59,59,0.16);
-    border:1px solid rgba(255,111,94,0.45);
-    border-radius:var(--radius);
-    padding:14px 16px;
-    font-size:0.86rem;
-    color:var(--ink);
-  }
-  .pay-warning b{ color:var(--red); }
+  /* compact price rows: name and price on the left, a small order button on the right */
+  .prow{display:flex;align-items:center;gap:12px;margin-top:8px;padding:12px 12px 12px 16px;border-radius:16px;background:var(--bg-2);border:1px solid var(--line);transition:border-color .2s;}
+  .prow:hover{border-color:var(--line-2);}
+  .prow.best{border-color:rgba(226,178,90,.6);background:linear-gradient(160deg,#2A2116,var(--bg-2) 70%);}
+  .prow .pm{flex:1;min-width:0;}
+  .prow .pn{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;font-size:15.5px;font-weight:800;letter-spacing:-.01em;line-height:1.3;}
+  .prow .pp{display:block;font-size:17px;font-weight:800;color:var(--gold-2);letter-spacing:-.01em;margin-top:3px;}
+  .prow .pp small{font-size:12px;font-weight:600;color:var(--faint);letter-spacing:0;margin-left:3px;}
+  .prow .pd{display:block;font-size:13px;color:var(--muted);line-height:1.4;margin-top:3px;}
+  .bv{font-size:10.5px;font-weight:800;color:var(--gold-ink);background:linear-gradient(135deg,var(--gold-2),var(--gold));border-radius:6px;padding:2px 7px;letter-spacing:0;}
+  .obtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 14px;border-radius:12px;flex:none;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.45);color:var(--wa-soft);font-size:14px;font-weight:700;white-space:nowrap;transition:background .2s,color .2s,transform .15s;}
+  .obtn svg.i{width:16px;height:16px;}
+  .obtn:hover{background:var(--wa);color:var(--wa-ink);}
+  .obtn:active{transform:scale(.95);}
+  .prow.best .obtn{background:var(--wa);color:var(--wa-ink);border-color:var(--wa);}
+  .facts{list-style:none;display:grid;gap:6px;margin-top:14px;padding:12px 14px;border-radius:14px;background:var(--bg-2);border:1px dashed var(--line-2);}
+  .facts li{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:#DCD2C0;line-height:1.4;}
+  .facts li svg.i{width:15px;height:15px;color:var(--gold);margin-top:2px;}
 
-  footer{
-    text-align:center;
-    padding:30px 18px 44px;
-    color:var(--ink-dim);
-    font-size:0.8rem;
-    position:relative; z-index:1;
-  }
-  footer .rule{
-    width:44px; height:1px; margin:0 auto 14px;
-    background:var(--line);
-  }
-  footer .tagline{
-    margin-top:8px;
-    color:var(--ink-dim);
-    font-size:0.78rem;
-  }
+  .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
+  .qt{position:relative;display:flex;flex-direction:column;align-items:flex-start;background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:12px 11px;transition:border-color .2s,transform .15s;}
+  .qt:active{transform:scale(.96);}
+  .qt:hover{border-color:var(--line-2);}
+  .qt .qn{font-size:20px;font-weight:800;letter-spacing:-.02em;line-height:1.1;}
+  .qt .qu{font-size:11.5px;color:var(--muted);}
+  .qt .qp{font-size:14px;font-weight:800;color:var(--gold-2);margin-top:8px;}
+  .qt .qo{position:absolute;top:10px;right:10px;color:var(--wa-soft);}
+  .qt .qo svg.i{width:14px;height:14px;}
+  .hint{font-size:12.5px;color:var(--faint);margin-top:8px;}
 
-  /* ---------- whatsapp support ---------- */
-  .support-bar{
-    max-width:760px; margin:18px auto 0; padding:0 18px;
-    opacity:0; animation:dropIn 0.8s 0.9s cubic-bezier(.2,.8,.2,1) forwards;
-  }
-  .support-bar .inner{
-    display:flex; align-items:center; justify-content:center; gap:10px;
-    flex-wrap:wrap; text-align:center;
-    background:var(--bg-card);
-    border:1px solid rgba(72,201,141,0.35);
-    border-radius:999px;
-    padding:10px 18px;
-  }
-  .support-bar span{ font-size:0.85rem; color:var(--ink-dim); }
-  .support-bar a.wa-link{
-    display:inline-flex; align-items:center; gap:6px;
-    background:#25D366; color:#0B2E1C;
-    font-weight:700; font-size:0.82rem;
-    padding:7px 14px; border-radius:999px;
-    text-decoration:none;
-    white-space:nowrap;
-    transition:transform .2s ease;
-  }
-  .support-bar a.wa-link:hover{ transform:scale(1.05); }
+  .note{display:flex;gap:10px;align-items:flex-start;margin-top:16px;padding:12px 14px;border-radius:14px;background:var(--bg-2);border:1px dashed var(--line-2);font-size:13.5px;color:var(--muted);}
+  .note svg.i{width:17px;height:17px;color:var(--gold);margin-top:2px;}
+  .note b{color:var(--text);}
+  .video{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000;margin-top:14px;}
+  .video video{width:100%;max-height:400px;}
+  .sh-help{text-align:center;font-size:13.5px;color:var(--faint);margin-top:22px;}
+  .sh-help a{color:var(--wa-soft);font-weight:700;}
 
-  .wa-float{
-    position:fixed;
-    left:16px; bottom:18px;
-    z-index:20;
-    width:54px; height:54px;
-    border-radius:50%;
-    background:#25D366;
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 16px rgba(37,211,102,0.5);
-    text-decoration:none;
-    animation:waPulse 2.2s ease-in-out infinite;
+  /* ---------- tablet / desktop ---------- */
+  @media (min-width:700px){
+    .intro .cta{flex-direction:row;justify-content:center;max-width:none;}
+    .pt b{font-size:14.5px;} .pt span{font-size:12.5px;}
+    .bubble.b3,.bubble.b4{display:flex;}
+    .svc-grid{grid-template-columns:repeat(3,1fr);gap:14px;}
+    /* the featured card lies flat across the top row on wider screens */
+    .svc.feature{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr auto;column-gap:22px;align-items:center;align-content:center;padding:24px 26px;}
+    .svc.feature .ico{grid-column:1;grid-row:1/span 3;width:58px;height:58px;border-radius:17px;}
+    .svc.feature .ico svg.i{width:27px;height:27px;}
+    .svc.feature h3,.svc.feature p,.svc.feature .plats{grid-column:2;}
+    .svc.feature h3{margin-top:0;font-size:19px;}
+    .svc.feature p{font-size:14px;max-width:56ch;}
+    .svc.feature .foot{grid-column:3;grid-row:1/span 3;flex-direction:column;align-items:flex-end;gap:12px;margin-top:0;padding-top:0;width:auto;}
+    .svc.feature .from{font-size:15px;}
+    .svc.feature .open{width:40px;height:40px;}
+    .quote{flex:0 0 50%;padding:0 6px;}
+    .sheet{left:50%;right:auto;top:50%;bottom:auto;width:580px;max-height:min(88vh,840px);border:1px solid var(--line-2);border-radius:24px;
+      transform:translate(-50%,-46%) scale(.97);opacity:0;transition:transform .3s cubic-bezier(.2,.85,.2,1),opacity .3s,visibility .3s;}
+    .sheet.open{transform:translate(-50%,-50%);opacity:1;}
+    .sh-grab{display:none;}
+    .sh-top{padding-top:16px;}
   }
-  @keyframes waPulse{
-    0%,100%{ box-shadow:0 4px 16px rgba(37,211,102,0.5); }
-    50%{ box-shadow:0 4px 26px rgba(37,211,102,0.85); }
+  @media (min-width:1000px){
+    .hdr-link{display:inline-flex;}
+    .intro{padding-top:84px;}
+    .sec{padding-top:96px;}
+    .quote{flex:0 0 33.333%;}
   }
-
-  /* ---------- modals ---------- */
-  .modal-overlay{
-    position:fixed; inset:0; z-index:50;
-    background:rgba(0,0,0,0.6);
-    display:none;
-    align-items:center; justify-content:center;
-    padding:20px;
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important;}
+    .rv,.st > *,.intro h1 .w{opacity:1;transform:none;}
+    .ico[data-cycle] svg.i{opacity:0;} .ico[data-cycle] svg.i.on{opacity:1;}
   }
-  .modal-overlay.show{ display:flex; }
-  .modal-box{
-    background:var(--bg-raised);
-    border:1px solid var(--gold);
-    border-radius:16px;
-    padding:26px 22px;
-    max-width:340px;
-    width:100%;
-    text-align:center;
-    box-shadow:0 10px 40px rgba(0,0,0,0.5);
-  }
-  .modal-appeal{
-    font-size:0.72rem;
-    font-weight:700;
-    color:var(--gold);
-    text-transform:uppercase;
-    letter-spacing:0.03em;
-    margin-bottom:10px;
-  }
-  .modal-title{
-    font-family:'Fraunces',serif;
-    font-size:1.15rem;
-    font-weight:700;
-    color:var(--gold-bright);
-    margin-bottom:8px;
-    line-height:1.5;
-  }
-  .modal-text{
-    font-size:0.9rem;
-    color:var(--ink-dim);
-    margin-bottom:18px;
-    line-height:1.6;
-  }
-  .modal-actions{ display:flex; gap:10px; justify-content:center; }
-  .modal-btn{
-    flex:1; max-width:120px;
-    padding:10px 0;
-    border-radius:999px;
-    border:none;
-    font-weight:700;
-    font-size:0.9rem;
-    cursor:pointer;
-    font-family:inherit;
-  }
-  .modal-btn.yes{ background:#25D366; color:#0B2E1C; }
-  .modal-btn.no{ background:transparent; color:var(--ink-dim); border:1px solid var(--line); }
 </style>
 </head>
 <body>
 
-<div class="alert-marquee">
-  <div class="track">
-    <span>📩 فیس بک سے متعلق کوئی بھی مسئلہ ہو تو ہمارے واٹس ایپ پر بالکل فری رابطہ کریں۔</span>
-    <span>📩 فیس بک سے متعلق کوئی بھی مسئلہ ہو تو ہمارے واٹس ایپ پر بالکل فری رابطہ کریں۔</span>
-    <span>📩 فیس بک سے متعلق کوئی بھی مسئلہ ہو تو ہمارے واٹس ایپ پر بالکل فری رابطہ کریں۔</span>
-    <span>📩 فیس بک سے متعلق کوئی بھی مسئلہ ہو تو ہمارے واٹس ایپ پر بالکل فری رابطہ کریں۔</span>
-  </div>
-</div>
+<div class="announce" lang="ur"><div class="track">
+  <span dir="rtl">📩 فیس بک سے متعلق کوئی بھی مسئلہ ہو تو ہمارے واٹس ایپ پر بالکل فری رابطہ کریں۔</span>
+  <span dir="rtl">📩 فیس بک سے متعلق کوئی بھی مسئلہ ہو تو ہمارے واٹس ایپ پر بالکل فری رابطہ کریں۔</span>
+  <span dir="rtl">📩 فیس بک سے متعلق کوئی بھی مسئلہ ہو تو ہمارے واٹس ایپ پر بالکل فری رابطہ کریں۔</span>
+</div></div>
 
-<a class="wa-float" id="waFloatBtn" href="#" aria-label="WhatsApp Support">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="#0B2E1C"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.1-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2Zm5.2 14.2c-.22.62-1.28 1.18-1.77 1.24-.45.06-1.02.08-1.65-.1-.38-.11-.87-.28-1.5-.55-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.07-1.42-1.07-2.71 0-1.29.68-1.92.92-2.18.24-.26.53-.32.7-.32h.5c.16 0 .38-.03.58.44.22.53.75 1.83.82 1.96.07.13.11.28.02.46-.09.18-.13.28-.26.43-.13.15-.27.34-.39.46-.13.13-.26.27-.11.53.15.26.68 1.12 1.46 1.82 1 .89 1.85 1.17 2.11 1.3.26.13.41.11.56-.07.15-.18.65-.76.82-1.02.17-.26.34-.22.57-.13.24.09 1.5.71 1.76.84.26.13.43.19.5.3.06.11.06.62-.16 1.24Z"/></svg>
-</a>
-
-<div class="hero">
-  <svg class="crown" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 19h20l-1.5-9-5 4-3.5-8-3.5 8-5-4L2 19z" stroke="#D9A94E" stroke-width="1.4" stroke-linejoin="round"/>
-  </svg>
-  <h1>Hoorab Group</h1>
-  <p class="sub">Increase your sales with Hoorab Group's professional sharing networks.</p>
-  <div class="ticker-wrap"><div id="ticker"></div></div>
-  <div class="rule"></div>
-</div>
-
-<nav>
-  <button data-target="reel">Hot Pkg</button>
-  <button data-target="live-count">Live Count</button>
-  <button data-target="monthly">Monthly Pkgs</button>
-  <button data-target="sharing">Extra Sharing</button>
-  <button data-target="ads">Get New Clients</button>
-  <button data-target="reviews">Reviews</button>
-  <button data-target="followers">Followers</button>
-  <button data-target="birthday">Surprise Websites</button>
-  <button data-target="other">Other Services</button>
-  <button data-target="payment">Payment</button>
-  <button data-target="testimonials">Testimonials</button>
-</nav>
+<header class="hdr" id="hdr"><div class="wrap in">
+  <a class="brand" href="#top">
+    <svg class="crown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 18h18l-1.6-9.5-4.9 4-3.5-8-3.5 8-4.9-4L3 18z"/><path d="M4 21h16"/></svg>
+    Hoorab Group
+  </a>
+  <a class="hdr-link" href="#services">Services</a>
+  <a class="hdr-link" href="#testimonials">Testimonials</a>
+  <a class="hdr-link" href="#payment">Payment</a>
+  <a class="hdr-wa" data-wa="general" target="_blank" rel="noopener"><span data-i="message-circle"></span>WhatsApp</a>
+</div></header>
 
 <main>
-
-  <section id="reel">
-    <div class="section-head reveal">
-      <span class="eyebrow">Featured Package</span>
-      <h2>Live &amp; Reel Pin Pkg <span class="hot-badge">🔥 HOT PACKAGE</span></h2>
-      <p>Either a reel or a live is allowed under this package.</p>
+  <!-- ================= INTRO ================= -->
+  <section class="intro" id="top">
+    <div class="intro-bg" aria-hidden="true">
+      <div class="glow g1"></div><div class="glow g2"></div><div class="grid-lines"></div>
+      <span class="bubble b1"><span class="dot"><span data-i="heart"></span></span>New likes</span>
+      <span class="bubble b2"><span class="dot"><span data-i="share-2"></span></span>Shared to groups</span>
+      <span class="bubble b3"><span class="dot"><span data-i="star"></span></span>New review</span>
+      <span class="bubble b4"><span class="dot"><span data-i="message-circle"></span></span>New order</span>
     </div>
-    <div class="highlight-card reveal">
-      <div class="big-price"><span class="price-amt" data-base="1400">Rs 1,400</span> <span>/ 30 days</span></div>
-      <ul class="includes" style="text-align:left; margin-top:16px;">
-        <li>1 reel or live sharing per day</li>
-        <li>50 real &amp; authentic shares with likes &amp; cmnts</li>
-        <li>Live or reel will pin in our groups for 3+ hours ⌛</li>
-        <li>Organic reach support</li>
-        <li>1000% reach increase in short period</li>
-      </ul>
-    </div>
-    <p class="note reveal">Note: Package ends automatically after 30 days.</p>
-  </section>
-
-  <section id="live-count">
-    <div class="section-head reveal">
-      <span class="eyebrow">Live Sessions</span>
-      <h2>Live Count Pkgs</h2>
-      <p>In this package the number of lives will count. You can complete your 15 lives in 60 days &amp; your 30 lives in 90 days, without any tension 😍.</p>
-    </div>
-
-    <div class="subhead reveal">Page Pkgs</div>
-    <div class="grid reveal">
-      <div class="card"><div class="row"><span class="name">Page live with pin 📌 — 30 lives</span><span class="price"><span class="price-amt" data-base="2000">Rs 2,000</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">Page live — 30 lives</span><span class="price"><span class="price-amt" data-base="1800">Rs 1,800</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">Page live with pin 📌 — 15 lives</span><span class="price"><span class="price-amt" data-base="1200">Rs 1,200</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">Page live — 15 lives</span><span class="price"><span class="price-amt" data-base="1000">Rs 1,000</span></span></div></div>
-    </div>
-
-    <div class="subhead reveal">ID Pkgs</div>
-    <div class="grid reveal">
-      <div class="card"><div class="row"><span class="name">ID live with pin 📌 — 30 lives</span><span class="price"><span class="price-amt" data-base="1400">Rs 1,400</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">ID live — 30 lives</span><span class="price"><span class="price-amt" data-base="1300">Rs 1,300</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">ID live with pin 📌 — 15 lives</span><span class="price"><span class="price-amt" data-base="1000">Rs 1,000</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">ID live — 15 lives</span><span class="price"><span class="price-amt" data-base="900">Rs 900</span></span></div></div>
-    </div>
-  </section>
-
-  <section id="monthly">
-    <div class="section-head reveal">
-      <span class="eyebrow">Monthly Plan</span>
-      <h2>Monthly Hoorab Group Pkgs</h2>
-      <p>This package simply runs for 30 days. If you miss a live on any day, the team will not be responsible ❌. Just one live allowed daily.</p>
-    </div>
-    <div class="grid reveal">
-      <div class="card"><div class="row"><span class="name">Page live with pin 📌</span><span class="price"><span class="price-amt" data-base="1250">Rs 1,250</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">Page live</span><span class="price"><span class="price-amt" data-base="1150">Rs 1,150</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">ID live with pin 📌</span><span class="price"><span class="price-amt" data-base="1000">Rs 1,000</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">ID live</span><span class="price"><span class="price-amt" data-base="900">Rs 900</span></span></div></div>
-    </div>
-    <p class="note reveal">Note: Ends automatically after 30 days. Extra days will not be included ❌.</p>
-  </section>
-
-  <section id="sharing">
-    <div class="section-head reveal">
-      <span class="eyebrow">Sharing Services</span>
-      <h2>Moiz Extra Sharing Pkg</h2>
-      <p>Pick the package according to your need 😍.</p>
-    </div>
-
-    <div class="subhead reveal">Plans for 15 &amp; 30 Days</div>
-    <div class="grid two reveal">
-      <div class="highlight-card">
-        <div class="meta" style="margin-bottom:6px;">15 Days plan</div>
-        <div class="big-price"><span class="price-amt" data-base="1050" data-reseller="1060">Rs 1,050</span></div>
-        <div class="meta">70+ sharing per live, daily</div>
-      </div>
-      <div class="highlight-card">
-        <div class="meta" style="margin-bottom:6px;">Monthly plan</div>
-        <div class="big-price"><span class="price-amt" data-base="2000" data-reseller="2020">Rs 2,000</span></div>
-        <div class="meta">70+ sharing per live, daily</div>
-      </div>
-    </div>
-
-    <div class="subhead reveal">Or choose according to your own mind 😎</div>
-    <div class="card reveal">
-      <table class="share-table">
-        <tr><td>100 shares</td><td><span class="price-amt" data-base="85" data-reseller="110">Rs 85</span></td></tr>
-        <tr><td>150 shares</td><td><span class="price-amt" data-base="140" data-reseller="160">Rs 140</span></td></tr>
-        <tr><td>200 shares</td><td><span class="price-amt" data-base="185" data-reseller="210">Rs 185</span></td></tr>
-        <tr><td>250 shares</td><td><span class="price-amt" data-base="235" data-reseller="260">Rs 235</span></td></tr>
-        <tr><td>300 shares</td><td><span class="price-amt" data-base="286" data-reseller="310">Rs 286</span></td></tr>
-        <tr><td>350 shares</td><td><span class="price-amt" data-base="335" data-reseller="360">Rs 335</span></td></tr>
-        <tr><td>400 shares</td><td><span class="price-amt" data-base="385" data-reseller="410">Rs 385</span></td></tr>
-        <tr><td>500 shares</td><td><span class="price-amt" data-base="485" data-reseller="510">Rs 485</span></td></tr>
-        <tr><td>1000 shares</td><td><span class="price-amt" data-base="980" data-reseller="1020">Rs 980</span></td></tr>
-      </table>
-    </div>
-    <p class="note reveal">Note: Sharing team remains active till the end of the live.</p>
-  </section>
-
-  <section id="ads">
-    <div class="section-head reveal">
-      <span class="eyebrow">Marketing Service</span>
-      <h2>Get New Clients on WhatsApp</h2>
-      <p>We run targeted ads that bring real, ready-to-buy clients straight to your WhatsApp.</p>
-    </div>
-    <div class="promo-card reveal">
-      <div class="promo-title">100+ New Clients via WhatsApp</div>
-      <div class="promo-text">Through targeted ads, at a reasonable price — we handle everything so new clients land directly in your WhatsApp inbox, ready to talk business.</div>
-      <span class="promo-badge">✅ 100% Sale Guarantee</span>
-      <br>
-      <span class="promo-badge" style="margin-top:10px; background:#25D366; color:#0B2E1C; border-color:rgba(37,211,102,0.5); animation-delay:1.2s;">📩 DM for Details</span>
-    </div>
-  </section>
-
-  <section id="reviews">
-    <div class="section-head reveal">
-      <span class="eyebrow">Reviews</span>
-      <h2>Reviews Pkgs</h2>
-      <p>Real &amp; authentic reviews. Minimum working time 15 days — pics given by seller.</p>
-    </div>
-    <div class="grid two reveal">
-      <div class="card"><div class="row"><span class="name">25 reviews</span><span class="price"><span class="price-amt" data-base="350">Rs 350</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">50 reviews</span><span class="price"><span class="price-amt" data-base="600">Rs 600</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">100 reviews</span><span class="price"><span class="price-amt" data-base="1150">Rs 1,150</span></span></div></div>
-    </div>
-  </section>
-
-  <section id="followers">
-    <div class="section-head reveal">
-      <span class="eyebrow">Growth</span>
-      <h2>Followers Pkgs</h2>
-      <p>100% organic and original followers for Instagram &amp; Facebook.</p>
-    </div>
-    <div class="grid two reveal">
-      <div class="card"><div class="row"><span class="name">500 followers</span><span class="price"><span class="price-amt" data-base="750">Rs 750</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">1000 followers</span><span class="price"><span class="price-amt" data-base="1400">Rs 1,400</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">1500 followers</span><span class="price"><span class="price-amt" data-base="2100">Rs 2,100</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">2000 followers</span><span class="price"><span class="price-amt" data-base="2750">Rs 2,750</span></span></div></div>
-      <div class="card"><div class="row"><span class="name">5000 followers</span><span class="price"><span class="price-amt" data-base="6900">Rs 6,900</span></span></div></div>
-  </section>
-
-  <section id="birthday">
-    <div class="section-head reveal">
-      <span class="eyebrow">Personalized Gift</span>
-      <h2>Personalized Surprise Websites</h2>
-      <p>A one-of-a-kind surprise website for someone special — a partner, a child, a friend, or anyone you love. Fully customized to whatever you have in mind.</p>
-    </div>
-    <div class="demo-video-wrap reveal">
-      <video controls playsinline poster="data:image/jpeg;base64,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">
-        <source src="demo-birthday.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="highlight-card reveal">
-      <div class="big-price"><span class="price-amt" data-base="1350">Rs 1,350</span></div>
-      <ul class="includes" style="text-align:left; margin-top:16px;">
-        <li>Animated intro message, just for them</li>
-        <li>Swipeable "Cute Memories" photo gallery</li>
-        <li>Hidden personal message reveal</li>
-        <li>Fully customized to your own wish</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="other">
-    <div class="section-head reveal">
-      <span class="eyebrow">Extra Help</span>
-      <h2>Other Services</h2>
-      <p>Extra add-ons to boost your live sessions, plus Facebook support.</p>
-    </div>
-    <div class="grid reveal">
-      <div class="other-card">
-        <div class="oname">Fixed Views on Live Session</div>
-        <div class="odesc">Get 100, 200, or 300 fixed viewers on your live session to attract more customers.</div>
-      </div>
-      <div class="other-card">
-        <div class="oname">Extra Likes &amp; Extra Comments</div>
-        <div class="odesc">Boost your live session with extra likes and extra comments.</div>
-      </div>
-      <div class="other-card">
-        <div class="oname">Customer Reviews</div>
-        <div class="odesc">Get real customer reviews on your live sessions.</div>
-      </div>
-      <div class="other-card">
-        <div class="oname">Personalized Surprise Websites</div>
-        <div class="odesc">A custom surprise website for someone special — see the "Surprise Websites" section above.</div>
-      </div>
-      <div class="other-card">
-        <div class="oname">Facebook Related Issues</div>
-        <div class="odesc">We also handle Facebook ID recovery, fixing views issues, improving ID reach, and any other Facebook-related concern.</div>
-      </div>
-    </div>
-    <p class="note reveal">Message us on WhatsApp above for pricing and details.</p>
-  </section>
-
-  <section id="payment">
-    <div class="section-head reveal">
-      <span class="eyebrow">Booking</span>
-      <h2>Payment Details</h2>
-      <p>Send your payment using any of the accounts below.</p>
-    </div>
-    <div class="pay-grid reveal">
-      <div class="pay-card">
-        <h3>Easypaisa</h3>
-        <div class="field"><span>Account</span><b>Easypaisa</b></div>
-        <div class="field"><span>Number</span><b>0344-3965720</b></div>
-        <div class="field"><span>Title</span><b>M Moiz Haider</b></div>
-      </div>
-      <div class="pay-card">
-        <h3>JazzCash</h3>
-        <div class="field"><span>Account</span><b>Jazzcash</b></div>
-        <div class="field"><span>Number</span><b>0344-3965720</b></div>
-        <div class="field"><span>Title</span><b>M Moiz Haider</b></div>
-      </div>
-      <div class="pay-card">
-        <h3>Bank</h3>
-        <div class="field"><span>Bank</span><b>Sadapay</b></div>
-        <div class="field"><span>Account #</span><b>0344-3965720</b></div>
-        <div class="field"><span>Title</span><b>M Moiz Haider</b></div>
-      </div>
-    </div>
-    <div class="pay-warning reveal">
-      <b>Note:</b> Save your payment sending slip — otherwise your payment will not be counted.
-    </div>
-  </section>
-
-  <section id="testimonials">
-    <div class="section-head reveal">
-      <span class="eyebrow">Client Feedback</span>
-      <h2>Testimonials</h2>
-      <p>What our clients say after working with us.</p>
-    </div>
-    <div class="testi-wrap reveal">
-      <div class="testi-track">
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live package liya tha aur results sach mein kamal ke hain! 50 real shares se page ki reach ek dam se barh gayi.</div><div class="testi-name">Sara Ali</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں نے اپنے پیج کے لیے ریویوز کا پیکج لیا تھا۔ بالکل اصلی ریویوز ہیں اور میرے کسٹمرز کا مجھ پر بھروسہ کافی بڑھ گیا ہے۔</div><div class="testi-name">Usman Tariq</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Followers wale package se bohat faida hua. Sab followers organic hain aur ab engagement bhi kafi achi ho gayi hai.</div><div class="testi-name">Fatima Noor</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">حورب گروپ کا واٹس ایپ سپورٹ بہت زبردست ہے۔ میرا فیس بک کا مسئلہ انہوں نے فوراً حل کر دیا۔ بہترین سروس!</div><div class="testi-name">Ali Raza</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Monthly page live package is totally worth the money. 1250 Rs mein daily live with pin, mera business dubara se chal para hai.</div><div class="testi-name">Zara Khan</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ان کی سروس فیس بک کی پالیسیز کے بالکل مطابق ہے۔ مجھے اپنے پیج کے حوالے سے اب کوئی ٹینشن نہیں ہوتی۔</div><div class="testi-name">Bilal Ahmed</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">15 days wala Extra Sharing package try kiya tha. 70+ shares daily mile aur live session par achi khasi audience aana shuru ho gayi.</div><div class="testi-name">Sana Jamil</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live Count Package best laga mujhe! 60 din mein 15 lives wala, tension free kaam hai. Totally satisfied!</div><div class="testi-name">Danish Naseer</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">فکسڈ ویوز والے ایڈ آن نے میرے لائیو سیشن کی رونق بڑھا دی۔ اب لوگ خود بخود لائیو میں رکتے ہیں۔</div><div class="testi-name">Hira Mehmood</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Prices bohat reasonable hain baqi sab se. 100 shares sirf 85 Rs mein, maine try kiya acha response mila hey.</div><div class="testi-name">Kamran Shah</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Alhumdulliah last 3 saal say Hoorab Group say he kam krwa rhi hoon or sale bhe bht achi ho rhi hey!</div><div class="testi-name">Nida Qasim</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Reels par views bilkul nahi aa rahe the, inka Reel Pin package lene ke baad se response 100% better ho gaya hai.</div><div class="testi-name">Zainab Sheikh</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ریویوز پیکج خریدا تھا اپنے کپڑوں کے پیج کے لیے، اتنے نیچرل کمنٹس تھے کہ کسی کو لگا ہی نہیں کہ پیڈ سروس ہے۔</div><div class="testi-name">Omer Farooq</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Extra likes and comments really make a difference. Meri daily sales inki vajah se double ho chuki hain.</div><div class="testi-name">Tuba Junaid</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں پچھلے دو مہینے سے حورب گروپ سے سروسز لے رہا ہوں۔ بہت ایماندار لوگ ہیں، کبھی کام میں شکایت نہیں ملی۔</div><div class="testi-name">Hammad Ali</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Instagram aur Facebook dono ke followers liye the. Koi drop nahi hua abhi tak, 100% original accounts lagte hain.</div><div class="testi-name">Saad Imran</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Page live with pin ka experience bohat acha raha. Inky pin krny ki wjha say boht organic traffic and reach milte hai.</div><div class="testi-name">Maryam Yaseen</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">واٹس ایپ پر رابطہ کیا اور انہوں نے بہت اچھے سے گائیڈ کیا۔ سروس بھی اتنی ہی شاندار نکلی۔ ہائیلی ریکمنڈڈ!</div><div class="testi-name">Faisal Qureshi</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live sessions ke sharing sy waky he buyers mily hain. Mujhe inki Moiz Extra Sharing Pkg bohat pasand aayi.</div><div class="testi-name">Ayesha Malik</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Kam budget mein is se behtar service aur nahi mil sakti. Mere naye page ko inhone successful bana diya!</div><div class="testi-name">Waleed Hassan</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live package liya tha aur results sach mein kamal ke hain! 50 real shares se page ki reach ek dam se barh gayi.</div><div class="testi-name">Sara Ali</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں نے اپنے پیج کے لیے ریویوز کا پیکج لیا تھا۔ بالکل اصلی ریویوز ہیں اور میرے کسٹمرز کا مجھ پر بھروسہ کافی بڑھ گیا ہے۔</div><div class="testi-name">Usman Tariq</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Followers wale package se bohat faida hua. Sab followers organic hain aur ab engagement bhi kafi achi ho gayi hai.</div><div class="testi-name">Fatima Noor</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">حورب گروپ کا واٹس ایپ سپورٹ بہت زبردست ہے۔ میرا فیس بک کا مسئلہ انہوں نے فوراً حل کر دیا۔ بہترین سروس!</div><div class="testi-name">Ali Raza</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Monthly page live package is totally worth the money. 1250 Rs mein daily live with pin, mera business dubara se chal para hai.</div><div class="testi-name">Zara Khan</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ان کی سروس فیس بک کی پالیسیز کے بالکل مطابق ہے۔ مجھے اپنے پیج کے حوالے سے اب کوئی ٹینشن نہیں ہوتی۔</div><div class="testi-name">Bilal Ahmed</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">15 days wala Extra Sharing package try kiya tha. 70+ shares daily mile aur live session par achi khasi audience aana shuru ho gayi.</div><div class="testi-name">Sana Jamil</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live Count Package best laga mujhe! 60 din mein 15 lives wala, tension free kaam hai. Totally satisfied!</div><div class="testi-name">Danish Naseer</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">فکسڈ ویوز والے ایڈ آن نے میرے لائیو سیشن کی رونق بڑھا دی۔ اب لوگ خود بخود لائیو میں رکتے ہیں۔</div><div class="testi-name">Hira Mehmood</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Prices bohat reasonable hain baqi sab se. 100 shares sirf 85 Rs mein, maine try kiya acha response mila hey.</div><div class="testi-name">Kamran Shah</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Alhumdulliah last 3 saal say Hoorab Group say he kam krwa rhi hoon or sale bhe bht achi ho rhi hey!</div><div class="testi-name">Nida Qasim</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Reels par views bilkul nahi aa rahe the, inka Reel Pin package lene ke baad se response 100% better ho gaya hai.</div><div class="testi-name">Zainab Sheikh</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">ریویوز پیکج خریدا تھا اپنے کپڑوں کے پیج کے لیے، اتنے نیچرل کمنٹس تھے کہ کسی کو لگا ہی نہیں کہ پیڈ سروس ہے۔</div><div class="testi-name">Omer Farooq</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Extra likes and comments really make a difference. Meri daily sales inki vajah se double ho chuki hain.</div><div class="testi-name">Tuba Junaid</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">میں پچھلے دو مہینے سے حورب گروپ سے سروسز لے رہا ہوں۔ بہت ایماندار لوگ ہیں، کبھی کام میں شکایت نہیں ملی۔</div><div class="testi-name">Hammad Ali</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Instagram aur Facebook dono ke followers liye the. Koi drop nahi hua abhi tak, 100% original accounts lagte hain.</div><div class="testi-name">Saad Imran</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Page live with pin ka experience bohat acha raha. Inky pin krny ki wjha say boht organic traffic and reach milte hai.</div><div class="testi-name">Maryam Yaseen</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text" dir="rtl" lang="ur">واٹس ایپ پر رابطہ کیا اور انہوں نے بہت اچھے سے گائیڈ کیا۔ سروس بھی اتنی ہی شاندار نکلی۔ ہائیلی ریکمنڈڈ!</div><div class="testi-name">Faisal Qureshi</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Live sessions ke sharing sy waky he buyers mily hain. Mujhe inki Moiz Extra Sharing Pkg bohat pasand aayi.</div><div class="testi-name">Ayesha Malik</div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><div class="testi-text">Kam budget mein is se behtar service aur nahi mil sakti. Mere naye page ko inhone successful bana diya!</div><div class="testi-name">Waleed Hassan</div></div>
+    <div class="wrap">
+      <div class="intro-in">
+        <span class="pill rv"><span class="live"></span>The biggest sharing team on Facebook</span>
+        <h1 id="headline">We grow online sellers' business, organically.</h1>
+        <p class="lead rv" style="--d:.5s">Hoorab Group's team of 115+ girls shares your posts, reels and lives in big Facebook groups, and brings real followers, reviews and engagement, so real people see your products and buy from you.</p>
+        <div class="points">
+          <div class="pt rv" style="--d:.65s"><span class="ck"><span data-i="leaf"></span></span><div><b>100% organic work</b><span>Real people, no fake activity</span></div></div>
+          <div class="pt rv" style="--d:.75s"><span class="ck"><span data-i="badge-check"></span></span><div><b>Perfect work for sellers</b><span>Within Facebook's rules</span></div></div>
+          <div class="pt rv" style="--d:.85s"><span class="ck"><span data-i="trending-up"></span></span><div><b>More buyers, more sales</b><span>We help your business grow</span></div></div>
+        </div>
+        <div class="cta rv" style="--d:.95s">
+          <a class="btn btn-gold" href="#services">See our services</a>
+          <a class="btn btn-line" data-wa="general" target="_blank" rel="noopener"><span data-i="message-circle"></span>Chat on WhatsApp</a>
+        </div>
+        <a class="scroll-hint" href="#services" aria-label="Go to services"><span data-i="chevrons-down"></span></a>
       </div>
     </div>
   </section>
 
+  <!-- ================= SERVICES ================= -->
+  <section class="sec" id="services"><div class="wrap">
+    <div class="sec-head rv"><h2>Our services</h2><p>Tap any service to see its packages and prices.</p></div>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div></section>
+
+  <!-- ================= REVIEWS ================= -->
+  <section class="sec" id="testimonials"><div class="wrap">
+    <div class="sec-head rv"><h2>What sellers say</h2><p>Messages from sellers who work with Hoorab Group.</p></div>
+    <div class="slider rv"><div class="slides" id="slides"></div></div>
+    <div class="dots" id="dots"></div>
+  </div></section>
+
+  <!-- ================= PAYMENT ================= -->
+  <section class="sec" id="payment"><div class="wrap">
+    <div class="sec-head rv"><h2>Payment details</h2><p>Send your payment to any of these accounts, then send the slip on WhatsApp.</p></div>
+    <div class="pay rv" id="payRows"></div>
+    <div class="callout rv"><span data-i="info"></span><span>Keep a screenshot of your payment slip and send it to us. Payments without a slip are not counted.</span></div>
+  </div></section>
 </main>
 
-<footer>
-  <div class="rule"></div>
-  Hoorab Group
-  <div class="tagline">We just work in a professional way, according to Facebook rules and regulations 💯.</div>
-
-  <div class="support-bar">
-    <div class="inner">
-      <span>For any help or complaint, contact us below.</span>
-      <a class="wa-link" id="waLinkBtn" href="#">Contact us on WhatsApp</a>
-    </div>
+<footer><div class="wrap">
+  <div class="f-about">
+    <span class="avatar">MH</span>
+    <div><b>Hoorab Group, by Moiz Haider</b>We work professionally, according to Facebook's rules and regulations.</div>
   </div>
-</footer>
+  <div class="copyright">© <span id="yr"></span> Hoorab Group.<span id="ftWa"> WhatsApp: 0344-3965720</span></div>
+</div></footer>
 
-<!-- WhatsApp confirm modal -->
-<div class="modal-overlay" id="waModal">
-  <div class="modal-box">
-    <p class="modal-appeal">A Request from the Hoorab Team</p>
-    <p class="modal-title">Connect to Hoorab Group?</p>
-    <p class="modal-text">You'll be taken straight to our WhatsApp number to chat.</p>
-    <div class="modal-actions">
-      <button class="modal-btn yes" id="waYesBtn">Yes</button>
-      <button class="modal-btn no" id="waNoBtn">No</button>
-    </div>
-  </div>
-</div>
+<div class="toast" id="toast"></div>
 
-<!-- Recurring warning popup (Urdu, random message every ~12s) -->
-<div class="modal-overlay" id="warnModal">
-  <div class="modal-box">
-    <p class="modal-appeal" dir="rtl" lang="ur">حورب ٹیم کی آپ سے گزارش ہے:</p>
-    <p class="modal-title" id="warnText" dir="rtl" lang="ur"></p>
-    <div class="modal-actions">
-      <button class="modal-btn yes" id="warnOkBtn">OK</button>
-    </div>
+<!-- service panel -->
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shName" aria-hidden="true">
+  <div class="sh-grab"></div>
+  <div class="sh-top">
+    <button class="sh-btn" id="shBack" aria-label="Back"><span data-i="arrow-left"></span></button>
+    <div class="sh-title" id="shTitle"></div>
+    <button class="sh-btn" id="shClose" aria-label="Close"><span data-i="x"></span></button>
   </div>
+  <div class="sh-body" id="shBody"></div>
 </div>
 
 <script>
-  // scroll reveal
-  const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, {threshold:0.12});
-  els.forEach(el=>io.observe(el));
+/* ============ icons ============ */
+const ICONS = {"arrow-left": "<path d=\"m12 19-7-7 7-7\" /> <path d=\"M19 12H5\" />", "badge-check": "<path d=\"M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z\" /> <path d=\"m9 12 2 2 4-4\" />", "check": "<path d=\"M20 6 9 17l-5-5\" />", "chevron-right": "<path d=\"m9 18 6-6-6-6\" />", "chevrons-down": "<path d=\"m7 6 5 5 5-5\" /> <path d=\"m7 13 5 5 5-5\" />", "copy": "<rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\" /> <path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\" />", "copyright": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <path d=\"M14.83 14.83a4 4 0 1 1 0-5.66\" />", "crown": "<path d=\"M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z\" /> <path d=\"M5 21h14\" />", "dot": "<circle cx=\"12.1\" cy=\"12.1\" r=\"1\" />", "eye": "<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "gift": "<rect x=\"3\" y=\"8\" width=\"18\" height=\"4\" rx=\"1\" /> <path d=\"M12 8v13\" /> <path d=\"M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7\" /> <path d=\"M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5\" />", "group": "<path d=\"M3 7V5c0-1.1.9-2 2-2h2\" /> <path d=\"M17 3h2c1.1 0 2 .9 2 2v2\" /> <path d=\"M21 17v2c0 1.1-.9 2-2 2h-2\" /> <path d=\"M7 21H5c-1.1 0-2-.9-2-2v-2\" /> <rect width=\"7\" height=\"5\" x=\"7\" y=\"7\" rx=\"1\" /> <rect width=\"7\" height=\"5\" x=\"10\" y=\"12\" rx=\"1\" />", "heart": "<path d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\" />", "info": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <path d=\"M12 16v-4\" /> <path d=\"M12 8h.01\" />", "leaf": "<path d=\"M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z\" /> <path d=\"M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12\" />", "life-buoy": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <path d=\"m4.93 4.93 4.24 4.24\" /> <path d=\"m14.83 9.17 4.24-4.24\" /> <path d=\"m14.83 14.83 4.24 4.24\" /> <path d=\"m9.17 14.83-4.24 4.24\" /> <circle cx=\"12\" cy=\"12\" r=\"4\" />", "lock": "<rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\" /> <path d=\"M7 11V7a5 5 0 0 1 10 0v4\" />", "message-circle": "<path d=\"M7.9 20A9 9 0 1 0 4 16.1L2 22Z\" />", "pin": "<path d=\"M12 17v5\" /> <path d=\"M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z\" />", "quote": "<path d=\"M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\" /> <path d=\"M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\" />", "repeat-2": "<path d=\"m2 9 3-3 3 3\" /> <path d=\"M13 18H7a2 2 0 0 1-2-2V6\" /> <path d=\"m22 15-3 3-3-3\" /> <path d=\"M11 6h6a2 2 0 0 1 2 2v10\" />", "ribbon": "<path d=\"M12 11.22C11 9.997 10 9 10 8a2 2 0 0 1 4 0c0 1-.998 2.002-2.01 3.22\" /> <path d=\"m12 18 2.57-3.5\" /> <path d=\"M6.243 9.016a7 7 0 0 1 11.507-.009\" /> <path d=\"M9.35 14.53 12 11.22\" /> <path d=\"M9.35 14.53C7.728 12.246 6 10.221 6 7a6 5 0 0 1 12 0c-.005 3.22-1.778 5.235-3.43 7.5l3.557 4.527a1 1 0 0 1-.203 1.43l-1.894 1.36a1 1 0 0 1-1.384-.215L12 18l-2.679 3.593a1 1 0 0 1-1.39.213l-1.865-1.353a1 1 0 0 1-.203-1.422z\" />", "scroll": "<path d=\"M19 17V5a2 2 0 0 0-2-2H4\" /> <path d=\"M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3\" />", "share-2": "<circle cx=\"18\" cy=\"5\" r=\"3\" /> <circle cx=\"6\" cy=\"12\" r=\"3\" /> <circle cx=\"18\" cy=\"19\" r=\"3\" /> <line x1=\"8.59\" x2=\"15.42\" y1=\"13.51\" y2=\"17.49\" /> <line x1=\"15.41\" x2=\"8.59\" y1=\"6.51\" y2=\"10.49\" />", "sheet": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" /> <line x1=\"3\" x2=\"21\" y1=\"9\" y2=\"9\" /> <line x1=\"3\" x2=\"21\" y1=\"15\" y2=\"15\" /> <line x1=\"9\" x2=\"9\" y1=\"9\" y2=\"21\" /> <line x1=\"15\" x2=\"15\" y1=\"9\" y2=\"21\" />", "star": "<path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\" />", "store": "<path d=\"m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7\" /> <path d=\"M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8\" /> <path d=\"M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4\" /> <path d=\"M2 7h20\" /> <path d=\"M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7\" />", "target": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <circle cx=\"12\" cy=\"12\" r=\"6\" /> <circle cx=\"12\" cy=\"12\" r=\"2\" />", "thumbs-up": "<path d=\"M7 10v12\" /> <path d=\"M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z\" />", "trending-up": "<polyline points=\"22 7 13.5 15.5 8.5 10.5 2 17\" /> <polyline points=\"16 7 22 7 22 13\" />", "user": "<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\" /> <circle cx=\"12\" cy=\"7\" r=\"4\" />", "user-plus": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\" /> <circle cx=\"9\" cy=\"7\" r=\"4\" /> <line x1=\"19\" x2=\"19\" y1=\"8\" y2=\"14\" /> <line x1=\"22\" x2=\"16\" y1=\"11\" y2=\"11\" />", "video": "<path d=\"m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5\" /> <rect x=\"2\" y=\"6\" width=\"14\" height=\"12\" rx=\"2\" />", "x": "<path d=\"M18 6 6 18\" /> <path d=\"m6 6 12 12\" />"};
+const icon = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n]||""}</svg>`;
 
-  // headline
-  const headlines = [
-    "📩 Facebook issue? Message us on WhatsApp — we're here to help!",
-    "🛡️ 100% secure, authentic & restriction-free growth.",
-    "⚡ Fast, reliable service trusted by hundreds of clients.",
-    "📈 Grow your page the organic way.",
-    "🤝 Professional support, every step of the way."
-  ];
-  const tickerEl = document.getElementById('ticker');
-  let lastIdx = -1;
-  function pickNext(){
-    let idx;
-    do{ idx = Math.floor(Math.random()*headlines.length); } while(idx===lastIdx && headlines.length>1);
-    lastIdx = idx;
-    return headlines[idx];
-  }
-  tickerEl.textContent = pickNext();
-  setInterval(()=>{
-    tickerEl.classList.add('fade');
-    setTimeout(()=>{
-      tickerEl.textContent = pickNext();
-      tickerEl.classList.remove('fade');
-    }, 500);
-  }, 4000);
+/* ============ prices and reseller links (same behaviour as the current site) ============ */
+const params = new URLSearchParams(location.search);
+const waParam = params.get("wa");
+const WA_NUMBER = (waParam && /^\d{10,15}$/.test(waParam)) ? waParam : "923443965720";
+const isReseller = params.has("m") || params.has("wa");
+const markup = parseFloat(params.get("m")) || 0;
+function price(base, resellerBase){
+  let p = (isReseller && resellerBase) ? resellerBase : base;
+  if(markup > 0) p = Math.round(p * (1 + markup/100) / 5) * 5;
+  return p;
+}
+const rs = n => "Rs " + n.toLocaleString("en-US");
+function waLink(kind, name, p){
+  let text = "Hi Hoorab Group! I visited your website and I'm interested in your services.";
+  if(kind === "order") text = `Hi Hoorab Group! I want to order: ${name} (${rs(p)})`;
+  if(kind === "ask") text = `Hi Hoorab Group! Please tell me about: ${name}`;
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+}
 
-  // auto-scroll through sections when idle; stops on first manual interaction
-  const sectionOrder = ['reel','live-count','monthly','sharing','ads','reviews','followers','birthday','other','payment','testimonials'];
-  let autoIdx = -1;
-  let autoplay = true;
-  const autoTimer = setInterval(()=>{
-    if(!autoplay) return;
-    autoIdx = (autoIdx+1) % sectionOrder.length;
-    const el = document.getElementById(sectionOrder[autoIdx]);
-    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  }, 5000);
+/* ============ packages (same prices as the current site) ============ */
+const HOT = {p:1400};
+const MONTHLY = { page:[{pin:true,p:1250},{pin:false,p:1150}], id:[{pin:true,p:1000},{pin:false,p:900}] };
+const COUNT = {
+  page:[{n:30,pin:true,p:2000,days:90},{n:30,pin:false,p:1800,days:90},{n:15,pin:true,p:1200,days:60},{n:15,pin:false,p:1000,days:60}],
+  id:[{n:30,pin:true,p:1400,days:90},{n:30,pin:false,p:1300,days:90},{n:15,pin:true,p:1000,days:60},{n:15,pin:false,p:900,days:60}]
+};
+const EXTRA_PLANS = [{days:15,p:1050,r:1060},{days:30,p:2000,r:2020}];
+const SHARES = [[100,85,110],[150,140,160],[200,185,210],[250,235,260],[300,286,310],[350,335,360],[400,385,410],[500,485,510],[1000,980,1020]];
+const FOLLOWERS = [[500,750],[1000,1400],[1500,2100],[2000,2750],[5000,6900]];
+const REVIEWS = [[25,350],[50,600],[100,1150]];
+const WEBSITE = 1350;
+const minP = arr => Math.min(...arr);
+const FROM = {
+  budget: minP([HOT.p, ...MONTHLY.id.map(x=>x.p), ...COUNT.id.map(x=>x.p)].map(p=>price(p))),
+  extra: minP(SHARES.map(s=>price(s[1],s[2]))),
+  followers: price(FOLLOWERS[0][1]), reviews: price(REVIEWS[0][1]), websites: price(WEBSITE)
+};
 
-  function stopAutoplay(){
-    if(!autoplay) return;
-    autoplay = false;
-    clearInterval(autoTimer);
-  }
-  window.addEventListener('wheel', stopAutoplay, {passive:true});
-  window.addEventListener('touchstart', stopAutoplay, {passive:true});
+/* ============ services on the page ============ */
+const SVCS = [
+  {id:"sharing", feature:true, tag:"Most popular", n:"Facebook sharing", ic:"share-2", anim:"ring", color:"",
+    d:"We share your post, reel or live in our big Facebook groups so many more real people see it.", plats:["fb"], from:Math.min(FROM.budget, FROM.extra)},
+  {id:"followers", n:"Followers", ic:"user-plus", anim:"a-bounce", color:"c-pink", d:"Organic, original followers for your page or profile.", plats:["ig","fb"], from:FROM.followers},
+  {id:"reviews", n:"Reviews", ic:"star", anim:"a-twinkle", color:"", d:"Real reviews that make new buyers trust you.", plats:["fb"], from:FROM.reviews},
+  {id:"engagement", n:"Likes and comments", cycle:"heart,thumbs-up,message-circle,eye", anim:"a-beat", color:"c-red", d:"Likes, comments and live viewers on posts, reels and lives.", plats:["fb"], soft:"Ask price"},
+  {id:"ads", n:"Ads and new clients", ic:"target", anim:"a-spin", color:"c-blue", d:"Targeted ads that bring ready-to-buy clients to your WhatsApp.", plats:["fb","ig"], soft:"Ask price"},
+  {id:"websites", n:"Surprise websites", ic:"gift", anim:"a-wiggle", color:"", d:"A personal website made as a gift for someone special.", plats:[], from:FROM.websites},
+  {id:"help", n:"Facebook help", ic:"life-buoy", anim:"a-spin", color:"c-green", d:"ID recovery, views and reach problems. Advice is free.", plats:["fb"], soft:"Free advice"}
+];
+const PLAT = {ig:'<span class="plat ig"><i></i>Instagram</span>', fb:'<span class="plat fb"><i></i>Facebook</span>'};
+function icoTile(s, big){
+  const inner = s.cycle ? "" : icon(s.ic);
+  return `<span class="ico ${s.color||""} ${s.anim==="ring"?"":s.anim}"${s.cycle?` data-cycle="${s.cycle}"`:""}>${inner}${s.anim==="ring"?'<span class="ring"></span>':""}</span>`;
+}
+document.getElementById("svcGrid").innerHTML = SVCS.map((s,i)=>`
+  <button class="svc rv${s.feature?" feature":""}" style="--d:${(i%4)*0.07}s" data-svc="${s.id}">
+    ${icoTile(s)}
+    <h3>${s.n}${s.tag?`<span class="tagp">${s.tag}</span>`:""}</h3>
+    <p>${s.d}</p>
+    ${s.plats.length?`<div class="plats">${s.plats.map(p=>PLAT[p]).join("")}</div>`:""}
+    <span class="foot">${s.from?`<span class="from">From ${rs(s.from)}</span>`:`<span class="from soft">${s.soft}</span>`}<span class="open">${icon("chevron-right")}</span></span>
+  </button>`).join("");
 
-  document.querySelectorAll('nav button[data-target]').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      stopAutoplay();
-      const target = document.getElementById(btn.getAttribute('data-target'));
-      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-    });
+/* ============ panel content ============ */
+const tick = t => `<li>${icon("check")}<span>${t}</span></li>`;
+const pinT = () => `<span class="t pin">${icon("pin")}Pin</span>`;
+const pinW = () => `<span class="t pin">${icon("pin")}with Pin</span>`;
+const tagT = t => `<span class="t">${t}</span>`;
+const note = (ic, html) => `<div class="note">${icon(ic)}<span>${html}</span></div>`;
+function pk(o){
+  return `<div class="pk${o.best?" best":""}${o.small?" small":""}">
+    ${o.ribbon?`<span class="ribbon">${o.ribbon}</span>`:""}
+    <div class="r1">
+      <div><h4>${o.n}</h4>${(o.tags||[]).filter(Boolean).length?`<div class="tg">${o.tags.join("")}</div>`:""}</div>
+      ${o.p?`<div class="pr num">${rs(o.p)}${o.per?`<small>${o.per}</small>`:""}</div>`:`<div class="pr soft">${o.priceText||"Ask price"}</div>`}
+    </div>
+    ${o.ds?`<p class="ds">${o.ds}</p>`:""}
+    ${o.f?`<ul>${o.f.map(tick).join("")}</ul>`:'<div style="height:12px"></div>'}
+    ${o.p
+      ? `<a class="order" href="${waLink("order", o.order||o.n, o.p)}" target="_blank" rel="noopener">${icon("message-circle")}Order on WhatsApp</a>`
+      : `<a class="order" href="${waLink("ask", o.order||o.n)}" target="_blank" rel="noopener">${icon("message-circle")}${o.btn||"Ask price on WhatsApp"}</a>`}
+  </div>`;
+}
+/* one compact row: name (+ tags) and price on the left, a small WhatsApp button on the right */
+function prow(o){
+  const tags = (o.tags||[]).filter(Boolean).join("") + (o.best ? `<span class="bv">${o.best}</span>` : "");
+  const btn = o.p
+    ? `<a class="obtn" href="${waLink("order", o.order||o.n, o.p)}" target="_blank" rel="noopener">${icon("message-circle")}Order</a>`
+    : `<a class="obtn" href="${waLink("ask", o.order||o.n)}" target="_blank" rel="noopener">${icon("message-circle")}${o.btn||"Ask price"}</a>`;
+  return `<div class="prow${o.best?" best":""}"><div class="pm">
+      <div class="pn">${o.n}${tags}</div>
+      ${o.p?`<span class="pp num">${rs(o.p)}${o.per?`<small>${o.per}</small>`:""}</span>`:""}
+      ${o.ds?`<span class="pd">${o.ds}</span>`:""}
+    </div>${btn}</div>`;
+}
+const facts = list => `<ul class="facts">${list.map(tick).join("")}</ul>`;
+const bestIdx = list => { let b=0; list.forEach((x,i)=>{ if(price(x[1])/x[0] < price(list[b][1])/list[b][0]) b=i; }); return b; };
+function tiles(list, unit, orderName){
+  return `<div class="qgrid">${list.map(x=>{ const p = price(x[1],x[2]); const q = x[0].toLocaleString("en-US");
+    return `<a class="qt" href="${waLink("order", orderName(q), p)}" target="_blank" rel="noopener"><span class="qo">${icon("message-circle")}</span><span class="qn num">${q}</span><span class="qu">${unit}</span><span class="qp num">${rs(p)}</span></a>`; }).join("")}</div>
+    <p class="hint">Tap a box to order it on WhatsApp.</p>`;
+}
+
+let acct = "page";
+const VIEWS = {
+  /* Sharing: two simple choices first */
+  "sharing": { title:"Facebook sharing", sub:"Choose the type of sharing", svc:"sharing", body:()=>`
+    <p class="sh-intro">We share your post, reel or live in our big Facebook groups. Pick the type that fits your budget.</p>
+    <button class="choice gold" data-go="budget">
+      <div class="top"><span class="ico">${icon("pin")}<span class="ring"></span></span><div><div class="sub">Budget packages</div><h3>Hoorab Group packages</h3></div></div>
+      <p>Reasonable ready-made packages with up to 50 shares, daily sharing and Pin, for pages and personal IDs.</p>
+      <div class="row"><span class="from">From ${rs(FROM.budget)}</span><span class="see">See packages${icon("chevron-right")}</span></div>
+    </button>
+    <button class="choice" data-go="extra">
+      <div class="top"><span class="ico c-blue a-bounce">${icon("repeat-2")}</span><div><div class="sub">More shares</div><h3>Moiz Extra Sharing</h3></div></div>
+      <p>70+ shares on your post, reel or live every day, or choose exactly how many shares you want.</p>
+      <div class="row"><span class="from">From ${rs(FROM.extra)}</span><span class="see">See packages${icon("chevron-right")}</span></div>
+    </button>`},
+
+  "budget": { title:"Hoorab Group packages", sub:"Budget sharing, up to 50 shares", back:"sharing", svc:"sharing", body:()=>{
+    const who = acct==="page" ? "Facebook page" : "Personal ID";
+    return `
+    <p class="sh-intro">Choose where you sell, then pick your package.</p>
+    <div class="switch" role="group" aria-label="Where do you sell?">
+      <button data-acct="page" class="${acct==="page"?"on":""}">${icon("store")}Facebook page</button>
+      <button data-acct="id" class="${acct==="id"?"on":""}">${icon("user")}Personal ID</button>
+    </div>
+    ${pk({best:true, ribbon:"Best seller", n:"Live & Reel Pin package", tags:[pinT(), tagT("30 days"), tagT("Page or ID")], p:price(HOT.p), per:"for 30 days",
+      f:["1 post, reel or live shared every day","50 real shares with likes and comments","Pinned in our groups for 3+ hours","1000% reach increase in a short period"],
+      order:`Live & Reel Pin package, 30 days (${who})`})}
+    <div class="grp-h">Monthly packages</div>
+    <div class="grp-p">1 post, reel or live shared every day for 30 days. A missed day is not carried forward.</div>
+    ${MONTHLY[acct].map(x=>prow({n:"Daily sharing", tags:[x.pin?pinW():""], p:price(x.p), per:"for 30 days",
+      order:`Daily sharing${x.pin?" with Pin":""}, 30 days (${who})`})).join("")}
+    <div class="grp-h">Count packages</div>
+    <div class="grp-p">Buy a number of posts, reels or lives, and use them whenever you like within the given days.</div>
+    ${COUNT[acct].map(x=>prow({n:`${x.n} posts, reels or lives`, tags:[x.pin?pinW():""], p:price(x.p), per:`use within ${x.days} days`,
+      order:`${x.n} posts, reels or lives${x.pin?" with Pin":""}, within ${x.days} days (${who})`})).join("")}
+    ${note("pin","<b>Pin</b> means your post, reel or live stays at the top of our groups for 3+ hours, so many more people see it.")}`; }},
+
+  "extra": { title:"Moiz Extra Sharing", sub:"70+ shares, or your own number", back:"sharing", svc:"sharing", body:()=>`
+    <p class="sh-intro">Extra shares on your post, reel or live. Our sharing team stays active until your live ends.</p>
+    <div class="grp-h">Daily plans</div>
+    <div class="grp-p">70+ shares on your post, reel or live, every day.</div>
+    ${EXTRA_PLANS.map(x=>prow({n:`${x.days} days plan`, best:x.days===30?"Best value":"", p:price(x.p,x.r),
+      order:`Moiz Extra Sharing, 70+ shares daily, ${x.days} days plan`})).join("")}
+    <div class="grp-h">Choose your own number</div>
+    <div class="grp-p">Shares for one post, reel or live.</div>
+    ${tiles(SHARES, "shares", q=>`Moiz Extra Sharing, ${q} shares for one post, reel or live`)}`},
+
+  "followers": { title:"Followers", sub:"Instagram and Facebook", svc:"followers", body:()=>{ const b = bestIdx(FOLLOWERS); return `
+    <p class="sh-intro">100% organic and original followers for your Instagram or Facebook. Tell us which one when you order.</p>
+    <div class="plats" style="margin-top:12px">${PLAT.ig}${PLAT.fb}</div>
+    ${FOLLOWERS.map((x,i)=>prow({n:`${x[0].toLocaleString("en-US")} followers`, best:i===b?"Best value":"", p:price(x[1]),
+      order:`${x[0].toLocaleString("en-US")} followers`})).join("")}`; }},
+
+  "reviews": { title:"Reviews", sub:"Real and authentic", svc:"reviews", body:()=>{ const b = bestIdx(REVIEWS); return `
+    <p class="sh-intro">Real and authentic reviews that help new buyers trust your page.</p>
+    ${facts(["Work takes at least 15 days","You provide the pictures"])}
+    ${REVIEWS.map((x,i)=>prow({n:`${x[0]} reviews`, best:i===b?"Best value":"", p:price(x[1]), order:`${x[0]} reviews`})).join("")}`; }},
+
+  "engagement": { title:"Likes and comments", sub:"Engagement add-ons", svc:"engagement", body:()=>`
+    <p class="sh-intro">More likes, comments and viewers, so new people stop and take notice. Prices depend on how much you need.</p>
+    ${prow({n:"Fixed viewers on live", ds:"100, 200 or 300 viewers, so your live looks busy and attracts buyers."})}
+    ${prow({n:"Extra likes and comments", ds:"Boost any post, reel or live."})}
+    ${prow({n:"Customer reviews on live", ds:"Real customer reviews on your live sessions."})}`},
+
+  "ads": { title:"Ads and new clients", sub:"Targeted ads", svc:"ads", body:()=>`
+    <p class="sh-intro">We run targeted ads that bring real, ready-to-buy clients straight to your WhatsApp.</p>
+    ${pk({best:true, ribbon:"100% sale guarantee", n:"100+ new clients on WhatsApp", ds:"Targeted ads at a reasonable price. We handle everything, and new clients message you directly.",
+      f:["Targeted Facebook and Instagram ads","We handle the whole setup","Clients come straight to your WhatsApp"], order:"Ads: 100+ new clients on WhatsApp"})}`},
+
+  "websites": { title:"Surprise websites", sub:"A gift they will remember", svc:"websites", body:()=>`
+    <p class="sh-intro">A one-of-a-kind website for someone special: a partner, a child, a friend, or anyone you love.</p>
+    <div class="video"><video controls playsinline preload="metadata" poster="data:image/jpeg;base64,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" src="demo-birthday.mp4"></video></div>
+    ${pk({best:true, ribbon:"Perfect gift", n:"Personalized surprise website", p:price(WEBSITE), ds:"Made only for them, for a birthday, anniversary or any surprise.",
+      f:["Animated intro message, just for them","Swipeable photo gallery of your memories","Hidden personal message reveal","Fully customized to your wish"]})}`},
+
+  "help": { title:"Facebook help", sub:"Free advice on WhatsApp", svc:"help", body:()=>`
+    <p class="sh-intro">Facing any Facebook problem? Tell us on WhatsApp. Advice is free.</p>
+    ${prow({n:"Facebook ID recovery", ds:"Locked out or lost your ID? We help you get it back.", btn:"Ask"})}
+    ${prow({n:"Views and reach problems", ds:"Posts, reels or lives not getting views? We find the cause.", btn:"Ask"})}
+    ${prow({n:"Any other Facebook issue", ds:"Restrictions, page problems or anything else.", btn:"Ask", order:"A Facebook issue"})}`}
+};
+
+/* ============ panel open / close / back (phone back button steps back too) ============ */
+const sheet = document.getElementById("sheet"), sheetBg = document.getElementById("sheetBg"), shBody = document.getElementById("shBody"), shTitle = document.getElementById("shTitle");
+let current = null, isOpen = false, pushed = 0, ignorePop = 0, historyOK = true;
+function safeHistory(fn){ if(!historyOK) return false; try{ fn(); return true; }catch(e){ historyOK = false; return false; } }
+function draw(id){
+  current = id;
+  const v = VIEWS[id], s = SVCS.find(x=>x.id===v.svc);
+  shTitle.innerHTML = `${icoTile(s)}<div><b id="shName">${v.title}</b><small>${v.sub}</small></div>`;
+  hydrate(shTitle);
+  document.getElementById("shBack").style.display = v.back ? "flex" : "none";
+  shBody.innerHTML = `<div class="st">${v.body()}<div class="sh-help">Not sure? <a data-wa="general" target="_blank" rel="noopener">Ask us on WhatsApp</a></div></div>`;
+  [...shBody.firstElementChild.children].forEach((el,k)=>el.style.setProperty("--k", Math.min(k, 10)));
+  hydrate(shBody);
+  shBody.scrollTop = 0;
+  shBody.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{ go(b.dataset.go); });
+  shBody.querySelectorAll("[data-acct]").forEach(b=>b.onclick=()=>{ acct = b.dataset.acct; const y = shBody.scrollTop; draw(current); shBody.scrollTop = y; });
+}
+function go(id){ draw(id); if(safeHistory(()=>history.pushState({panel:id}, "", location.href))) pushed++; }
+function openPanel(id){
+  isOpen = true;
+  document.documentElement.classList.add("lock");
+  sheet.classList.add("open"); sheetBg.classList.add("open"); sheet.setAttribute("aria-hidden","false");
+  chatWidget(false);
+  go(id);
+}
+function hidePanel(){
+  isOpen = false;
+  sheet.classList.remove("open"); sheetBg.classList.remove("open"); sheet.setAttribute("aria-hidden","true");
+  document.documentElement.classList.remove("lock");
+  chatWidget(true);
+}
+function closePanel(){
+  if(!isOpen) return;
+  hidePanel();
+  if(pushed > 0){ const n = pushed; pushed = 0; ignorePop = 1; safeHistory(()=>history.go(-n)); }
+}
+function backPanel(){
+  const v = VIEWS[current];
+  if(!v || !v.back) return closePanel();
+  if(pushed > 0) history.back(); else draw(v.back);
+}
+addEventListener("popstate", ()=>{
+  if(ignorePop > 0){ ignorePop--; return; }
+  if(!isOpen) return;
+  pushed = Math.max(0, pushed - 1);
+  const v = VIEWS[current];
+  if(v && v.back) draw(v.back); else { pushed = 0; hidePanel(); }
+});
+document.getElementById("shBack").onclick = backPanel;
+document.getElementById("shClose").onclick = closePanel;
+sheetBg.onclick = closePanel;
+addEventListener("keydown", e=>{ if(e.key === "Escape") closePanel(); });
+document.querySelectorAll("[data-svc]").forEach(b=>b.onclick=()=>openPanel(b.dataset.svc));
+
+/* ============ reviews ============ */
+const QUOTES = [
+  ["Sara Ali","Live package liya tha aur results sach mein kamal ke hain! 50 real shares se page ki reach ek dam se barh gayi."],
+  ["Usman Tariq","میں نے اپنے پیج کے لیے ریویوز کا پیکج لیا تھا۔ بالکل اصلی ریویوز ہیں اور میرے کسٹمرز کا مجھ پر بھروسہ کافی بڑھ گیا ہے۔",1],
+  ["Nida Qasim","Alhumdulliah last 3 saal say Hoorab Group say he kam krwa rhi hoon or sale bhe bht achi ho rhi hey!"],
+  ["Zara Khan","Monthly page live package is totally worth the money. 1250 Rs mein daily live with pin, mera business dubara se chal para hai."],
+  ["Ali Raza","حورب گروپ کا واٹس ایپ سپورٹ بہت زبردست ہے۔ میرا فیس بک کا مسئلہ انہوں نے فوراً حل کر دیا۔ بہترین سروس!",1],
+  ["Fatima Noor","Followers wale package se bohat faida hua. Sab followers organic hain aur ab engagement bhi kafi achi ho gayi hai."],
+  ["Sana Jamil","15 days wala Extra Sharing package try kiya tha. 70+ shares daily mile aur live session par achi khasi audience aana shuru ho gayi."],
+  ["Kamran Shah","Prices bohat reasonable hain baqi sab se. 100 shares sirf 85 Rs mein, maine try kiya acha response mila hey."]
+];
+const initials = n => n.split(" ").map(w=>w[0]).join("").slice(0,2);
+const slidesEl = document.getElementById("slides"), dotsEl = document.getElementById("dots");
+slidesEl.innerHTML = QUOTES.map(([n,t,ur])=>`<div class="quote"><div class="in"><div class="stars">${icon("star").repeat(5)}</div><p${ur?' dir="rtl" lang="ur"':""}>${t}</p><div class="who"><span class="av">${initials(n)}</span><b>${n}</b></div></div></div>`).join("");
+const perView = () => innerWidth >= 1000 ? 3 : innerWidth >= 700 ? 2 : 1;
+let qi = 0, qPause = false;
+function drawDots(){ const pages = QUOTES.length - perView() + 1; dotsEl.innerHTML = Array.from({length:pages},(_,i)=>`<button aria-label="Review ${i+1}" class="${i===qi?"on":""}"></button>`).join(""); dotsEl.querySelectorAll("button").forEach((d,i)=>d.onclick=()=>{ qPause=true; showQ(i); }); }
+function showQ(i){ const pages = QUOTES.length - perView() + 1; qi = (i + pages) % pages; slidesEl.style.transform = `translateX(-${qi * (100/perView())}%)`; dotsEl.querySelectorAll("button").forEach((d,k)=>d.classList.toggle("on",k===qi)); }
+drawDots(); addEventListener("resize", ()=>{ drawDots(); showQ(qi); });
+setInterval(()=>{ if(!qPause && !document.hidden && !isOpen) showQ(qi+1); }, 4500);
+let tx=null;
+slidesEl.addEventListener("touchstart", e=>{ qPause=true; tx=e.touches[0].clientX; }, {passive:true});
+slidesEl.addEventListener("touchend", e=>{ const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>40) showQ(qi+(dx<0?1:-1)); setTimeout(()=>qPause=false, 8000); });
+
+/* ============ payment ============ */
+const PAY = [["ep","EP","Easypaisa"],["jc","JC","JazzCash"],["sp","SP","SadaPay"]];
+document.getElementById("payRows").innerHTML = PAY.map(([c,l,m])=>`
+  <div class="pay-row"><span class="pay-logo ${c}">${l}</span><div class="t2"><b>${m}</b><span class="num">0344-3965720</span><span>M Moiz Haider</span></div>
+  <button class="copy" data-copy="03443965720">${icon("copy")}<span>Copy</span></button></div>`).join("");
+const toast = document.getElementById("toast"); let toastT;
+document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{
+  try{ await navigator.clipboard.writeText(b.dataset.copy); }catch(e){ const ta=document.createElement("textarea"); ta.value=b.dataset.copy; document.body.appendChild(ta); ta.select(); try{document.execCommand("copy");}catch(_){} ta.remove(); }
+  b.classList.add("done"); b.querySelector("span").textContent="Copied";
+  toast.textContent="Number copied"; toast.classList.add("show");
+  clearTimeout(toastT); toastT=setTimeout(()=>{ toast.classList.remove("show"); document.querySelectorAll(".copy.done").forEach(x=>{x.classList.remove("done"); x.querySelector("span").textContent="Copy";}); },1800);
+});
+
+/* ============ shared helpers + motion ============ */
+const revealIO = ("IntersectionObserver" in window) ? new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); revealIO.unobserve(e.target); } }),{threshold:.12, rootMargin:"0px 0px -6% 0px"}) : null;
+function hydrate(root){
+  root.querySelectorAll("[data-i]").forEach(el=>{ if(!el.firstChild) el.innerHTML = icon(el.dataset.i); });
+  root.querySelectorAll("[data-cycle]").forEach(el=>{ if(el.dataset.ready) return; el.dataset.ready = 1; el.insertAdjacentHTML("afterbegin", el.dataset.cycle.split(",").map(icon).join("")); el.querySelector("svg.i").classList.add("on"); });
+  root.querySelectorAll("[data-wa]").forEach(el=>{ el.href = waLink(el.dataset.wa); });
+  root.querySelectorAll(".rv:not(.in)").forEach(el=>revealIO ? revealIO.observe(el) : el.classList.add("in"));
+}
+setInterval(()=>{
+  document.querySelectorAll("[data-cycle]").forEach(el=>{
+    const kids = [...el.querySelectorAll("svg.i")]; if(kids.length < 2) return;
+    const cur = kids.findIndex(x=>x.classList.contains("on"));
+    kids[cur].classList.remove("on"); kids[(cur+1)%kids.length].classList.add("on");
   });
+}, 1600);
 
-  // WhatsApp confirm modal
-  const _resellerParams = new URLSearchParams(window.location.search);
-  const _waParam = _resellerParams.get('wa');
-  const WA_NUMBER = (_waParam && /^\d{10,15}$/.test(_waParam)) ? _waParam : "923443965720";
-  const WA_LINK = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent("Hi Hoorab Group! I visited your website and I'm interested in your services.");
-  const waModal = document.getElementById('waModal');
-  document.querySelectorAll('#waFloatBtn, #waLinkBtn').forEach(btn=>{
-    btn.addEventListener('click', (e)=>{
-      e.preventDefault();
-      waModal.classList.add('show');
-    });
-  });
-  document.getElementById('waYesBtn').addEventListener('click', ()=>{
-    waModal.classList.remove('show');
-    window.open(WA_LINK, '_blank');
-  });
-  document.getElementById('waNoBtn').addEventListener('click', ()=>{
-    waModal.classList.remove('show');
-  });
+/* headline words rise in one by one */
+const hl = document.getElementById("headline");
+const goldWords = ["organically."];
+hl.innerHTML = hl.textContent.trim().split(" ").map((w,i)=>`<span class="w${goldWords.includes(w)?" gold":""}" style="animation-delay:${0.12 + i*0.08}s">${w}</span>`).join(" ");
 
-  // recurring Urdu warning popup — random message every ~10-12s, starts after first scroll
-  const warnMessages = [
-    "نئی اور غیر معیاری ٹیموں سے بچیں، اور اپنے سالوں کی محنت ضائع نہ کریں۔",
-    "اپنی محنت ضائع نہ کریں، ناتجربہ کار ٹیموں کو سختی سے 'ناں' کہیں!",
-    "ناتجربہ کار شیئرنگ ٹیموں سے ہوشیار رہیں، یہ آپ کی کامیابی کو لمحوں میں تباہ کر سکتی ہیں!"
-  ];
-  const warnModal = document.getElementById('warnModal');
-  const warnTextEl = document.getElementById('warnText');
-  let warnCycleStarted = false;
-  let warnLastIdx = -1;
-  function nextWarnDelay(){
-    return 23000; // exact 23s
-  }
-  function pickWarnMessage(){
-    let idx;
-    do{ idx = Math.floor(Math.random()*warnMessages.length); } while(idx===warnLastIdx && warnMessages.length>1);
-    warnLastIdx = idx;
-    return warnMessages[idx];
-  }
-  function showWarnPopup(){
-    warnTextEl.textContent = pickWarnMessage();
-    warnModal.classList.add('show');
-  }
-  function scheduleNextWarn(){
-    setTimeout(showWarnPopup, nextWarnDelay());
-  }
-  function startWarnCycle(){
-    if(warnCycleStarted) return;
-    warnCycleStarted = true;
-    scheduleNextWarn();
-  }
-  window.addEventListener('scroll', startWarnCycle, {passive:true});
-  document.getElementById('warnOkBtn').addEventListener('click', ()=>{
-    warnModal.classList.remove('show');
-    scheduleNextWarn();
-  });
+const hdr = document.getElementById("hdr");
+addEventListener("scroll", ()=>hdr.classList.toggle("scrolled", scrollY > 10), {passive:true});
+document.getElementById("yr").textContent = new Date().getFullYear();
 
-  // ---------- reseller-only sharing prices ----------
-  // Any reseller link (has ?m= or ?wa=) shows the slightly higher
-  // "Moiz Extra Sharing" prices stored in data-reseller. Your own plain
-  // link (no params at all) always shows the original data-base prices.
-  const _isResellerLink = _resellerParams.has('m') || _resellerParams.has('wa');
-  if(_isResellerLink){
-    document.querySelectorAll('.price-amt[data-reseller]').forEach(el=>{
-      const resellerPrice = parseInt(el.getAttribute('data-reseller'), 10);
-      if(!resellerPrice) return;
-      el.setAttribute('data-base', resellerPrice); // so % markup below stacks on top of this
-      el.textContent = 'Rs ' + resellerPrice.toLocaleString('en-US');
-    });
-  }
+hydrate(document);
+/* links like moizdigital.com/#followers open that service directly */
+/* (ad links can point straight at a package: #followers, #reviews, #sharing, #budget, #extra ...) */
+const startHash = location.hash.slice(1);
+if(VIEWS[startHash]) setTimeout(()=>{
+  const v = VIEWS[startHash];
+  if(v.back){ openPanel(v.back); go(startHash); }   // e.g. #extra opens Sharing, then Moiz Extra Sharing, so Back still works
+  else openPanel(startHash);
+}, 500);
 
-  // ---------- reseller markup pricing ----------
-  // Share a link like yoursite.github.io/?m=15&wa=923001234567 — prices
-  // increase by that percentage (rounded to a clean number) and the
-  // WhatsApp button routes to that reseller's own number instead of
-  // the default. No "?m=" or "?wa=" = your own original link, unchanged.
-  (function applyResellerMarkup(){
-    const m = parseFloat(_resellerParams.get('m'));
-    if(!m || m <= 0) return; // no markup requested — leave prices as-is
-
-    document.querySelectorAll('.price-amt').forEach(el=>{
-      const base = parseInt(el.getAttribute('data-base'), 10);
-      if(!base) return;
-      let marked = base * (1 + m / 100);
-      marked = Math.round(marked / 5) * 5; // round to nearest Rs 5
-      el.textContent = 'Rs ' + marked.toLocaleString('en-US');
-    });
-  })();
+/* ============ live chat (tawk.to): loads after the page, hides while a package panel is open ============ */
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+function chatWidget(show){ try{ if(Tawk_API && Tawk_API.hideWidget){ show ? Tawk_API.showWidget() : Tawk_API.hideWidget(); } }catch(e){} }
+Tawk_API.onLoad = function(){ if(isOpen) chatWidget(false); };
+/* reseller links (?m= or ?wa=) keep their customers with the reseller: no direct chat, no owner number in the footer */
+if(isReseller) document.getElementById("ftWa").remove();
+else addEventListener("load", ()=>setTimeout(()=>{
+  const s = document.createElement("script");
+  s.async = true; s.src = "https://embed.tawk.to/6af0f27b2dcf7b3c3f4a9b2b/1k6uj6djc"; s.charset = "UTF-8"; s.setAttribute("crossorigin","*");
+  document.body.appendChild(s);
+}, 1500));
 </script>
-
 </body>
 </html>
