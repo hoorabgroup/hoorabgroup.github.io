@@ -126,7 +126,9 @@
   .svc h3{position:relative;font-size:16.5px;font-weight:800;letter-spacing:-.01em;margin-top:14px;line-height:1.25;}
   .svc p{position:relative;font-size:13px;color:var(--muted);line-height:1.45;margin-top:5px;}
   .plats{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;position:relative;}
-  .plat{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:700;padding:2px 7px 2px 5px;border-radius:999px;border:1px solid var(--line-2);color:#E2D8C6;}
+  .plat{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 9px 3px 4px;border-radius:999px;border:1px solid var(--line-2);color:#E2D8C6;}
+  .plat img{width:16px;height:16px;flex:none;display:block;}
+  .wa-logo{width:20px;height:20px;flex:none;display:block;}
   .plat i{width:6px;height:6px;border-radius:50%;}
   .plat.ig i{background:var(--ig);} .plat.fb i{background:var(--fb);} .plat.tt i{background:#25F4EE;}
   .svc-grid .svc:last-child:nth-child(even){grid-column:1/-1;}
@@ -359,7 +361,7 @@
   <a class="hdr-link" href="#services">Services</a>
   <a class="hdr-link" href="#testimonials">Testimonials</a>
   <a class="hdr-link" href="#payment">Payment</a>
-  <a class="hdr-wa" data-wa="general" target="_blank" rel="noopener"><span data-i="message-circle"></span>WhatsApp</a>
+  <a class="hdr-wa" data-wa="general" target="_blank" rel="noopener"><img class="wa-logo" src="logos/whatsapp.png" alt="">WhatsApp</a>
 </div></header>
 
 <main>
@@ -384,7 +386,7 @@
         </div>
         <div class="cta rv" style="--d:.95s">
           <a class="btn btn-gold" href="#services">See our services</a>
-          <a class="btn btn-line" data-wa="general" target="_blank" rel="noopener"><span data-i="message-circle"></span>Chat on WhatsApp</a>
+          <a class="btn btn-line" data-wa="general" target="_blank" rel="noopener"><img class="wa-logo" src="logos/whatsapp.png" alt="">Chat on WhatsApp</a>
         </div>
         <a class="scroll-hint" href="#services" aria-label="Go to services"><span data-i="chevrons-down"></span></a>
       </div>
@@ -489,7 +491,7 @@ const SVCS = [
   {id:"tiktok", n:"UK TikTok account", ic:"smartphone", anim:"a-bounce", color:"c-blue", d:"A UK-based TikTok account made for you, for more reach and earnings.", plats:["tt"], soft:"Ask price"},
   {id:"help", n:"Facebook help", ic:"life-buoy", anim:"a-spin", color:"c-green", d:"ID recovery, views and reach problems. Advice is free.", plats:["fb"], soft:"Free advice"}
 ];
-const PLAT = {ig:'<span class="plat ig"><i></i>Instagram</span>', fb:'<span class="plat fb"><i></i>Facebook</span>', tt:'<span class="plat tt"><i></i>TikTok</span>'};
+const PLAT = {ig:'<span class="plat"><img src="logos/instagram.png" alt="">Instagram</span>', fb:'<span class="plat"><img src="logos/facebook.png" alt="">Facebook</span>', tt:'<span class="plat"><img src="logos/tiktok.png" alt="">TikTok</span>'};
 function icoTile(s, big){
   const inner = s.cycle ? "" : icon(s.ic);
   return `<span class="ico ${s.color||""} ${s.anim==="ring"?"":s.anim}"${s.cycle?` data-cycle="${s.cycle}"`:""}>${inner}${s.anim==="ring"?'<span class="ring"></span>':""}</span>`;
